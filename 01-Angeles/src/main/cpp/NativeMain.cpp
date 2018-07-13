@@ -127,7 +127,7 @@ int drawInitFrame(struct Engine *engine) {
     }
 
     // Just fill the screen with a color.
-    glClearColor(0.6f, 0.6f, 0.6f, 0.5f);
+    glClearColor(0.2f, 0.6f, 0.6f, 0.5f);
     glClear(GL_COLOR_BUFFER_BIT);
 
     eglSwapBuffers(engine->display, engine->surface);
@@ -201,11 +201,29 @@ static int32_t engine_handle_input(struct android_app *app, AInputEvent *event) 
                 break;
 
             case AMOTION_EVENT_ACTION_UP:
-                engine->render->isAlive = !engine->render->isAlive;
+                struct timeval timeNow;
+
+                gettimeofday(&timeNow, NULL);
+                long now = timeNow.tv_sec * 1000 + timeNow.tv_usec / 1000;
+                if (engine->render->isAlive) {
+                    appPause(engine->render, now);
+                } else {
+                    appPlay(engine->render, now);
+                }
                 break;
         }
 
         return 1;
+    } else if (AInputEvent_getType(event) == AINPUT_EVENT_TYPE_KEY) {
+        MyLOGD("engine_handle_input-%d-AINPUT_EVENT_TYPE_KEY", AINPUT_EVENT_TYPE_KEY);
+        switch (AKeyEvent_getKeyCode(event)) {
+            case AKEYCODE_VOLUME_UP:
+                setLooping(engine->render, GL_TRUE);
+                break;
+            case AKEYCODE_VOLUME_DOWN:
+                setLooping(engine->render, GL_FALSE);
+                break;
+        }
     }
     MyLOGD("engine_handle_input-%d", AInputEvent_getType(event));
     return 0;

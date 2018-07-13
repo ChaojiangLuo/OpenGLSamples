@@ -422,6 +422,9 @@ static void drawFadeQuad(struct OpenGLRender* render)
 void initState(struct OpenGLRender* render) {
     render->sStartTick = 0;
     render->sTick = 0;
+    render->sPause = 0;
+
+    render->isLooping = GL_FALSE;
 
     render->sCurrentCamTrack = 0;
     render->sCurrentCamTrackStartTick = 0;
@@ -431,9 +434,20 @@ void initState(struct OpenGLRender* render) {
     render->sGroundPlane = NULL;
 }
 
+void resetState(struct OpenGLRender* render) {
+    render->sStartTick = 0;
+    render->sTick = 0;
+    render->sPause = 0;
+
+    render->sCurrentCamTrack = 0;
+    render->sCurrentCamTrackStartTick = 0;
+    render->sNextCamTrackStartTick = 0x7fffffff;
+}
+
 // Called from the app framework.
 void appInit(struct OpenGLRender* render)
 {
+    initState(render);
     unsigned int a;
 
     glEnable(GL_NORMALIZE);
@@ -729,6 +743,13 @@ void appRender(struct OpenGLRender* render, long tick, int width, int height)
     if (!render->isAlive)
         return;
 
+    if (render->sPause) {
+        render->sPause = 0;
+        render->sStartTick += (tick - render->tick);
+    }
+
+    render->tick = tick;
+
     // Actual tick value is "blurred" a little bit.
     render->sTick = (render->sTick + tick - render->sStartTick) >> 1;
 
@@ -736,7 +757,15 @@ void appRender(struct OpenGLRender* render, long tick, int width, int height)
     if (render->sTick >= RUN_LENGTH)
     {
         render->isAlive = 0;
-        return;
+        resetState(render);
+        if (!render->isLooping) {
+            return;
+        }
+        render->sStartTick = tick;
+        render->tick = tick;
+        // Actual tick value is "blurred" a little bit.
+        render->sTick = (render->sTick + tick - render->sStartTick) >> 1;
+        render->isAlive = 1;
     }
 
     // Prepare OpenGL ES for rendering of the frame.
@@ -761,4 +790,17 @@ void appRender(struct OpenGLRender* render, long tick, int width, int height)
 
     // Draw fade quad over whole window (when changing cameras).
     drawFadeQuad(render);
+}
+
+void appPause(struct OpenGLRender* render, long puaseTime) {
+    render->isAlive = 0;
+    render->sPause = render->tick;
+}
+
+void appPlay(struct OpenGLRender* render, long playTime) {
+    render->isAlive = 1;
+}
+
+void setLooping(struct OpenGLRender* render, GLboolean looping) {
+    render->isLooping = looping;
 }

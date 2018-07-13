@@ -70,6 +70,10 @@ struct OpenGLRender {
     int isAlive;
     long sStartTick;
     long sTick;
+    long tick;
+    long sPause;
+
+    GLboolean isLooping;
 
     int sCurrentCamTrack;
     long sCurrentCamTrackStartTick;
@@ -83,7 +87,9 @@ struct OpenGLRender {
 extern void appInit(struct OpenGLRender* render);
 extern void appDeinit(struct OpenGLRender* render);
 extern void appRender(struct OpenGLRender* render, long tick, int width, int height);
-
+extern void appPause(struct OpenGLRender* render, long puaseTime);
+extern void appPlay(struct OpenGLRender* render, long playTime);
+extern void setLooping(struct OpenGLRender* render, GLboolean looping);
 #ifdef __cplusplus
 }
 #endif
