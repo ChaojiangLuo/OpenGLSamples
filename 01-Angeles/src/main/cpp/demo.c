@@ -26,20 +26,13 @@
 #include <math.h>
 #include <float.h>
 #include <assert.h>
+#include <string.h>
 
 #include <GLES/gl.h>
 
 #include "demo.h"
 #include "shapes.h"
 #include "cams.h"
-
-
-// Total run length is 20 * camera track base unit length (see cams.h).
-#define RUN_LENGTH  (20 * CAMTRACK_LEN)
-#undef PI
-#define PI 3.1415926535897932f
-#define RANDOM_UINT_MAX 65535
-
 
 static unsigned long sRandomSeed = 0;
 
@@ -64,38 +57,6 @@ static long floatToFixed(float value)
 }
 
 #define FIXED(value) floatToFixed(value)
-
-
-// Definition of one GL object in this demo.
-typedef struct {
-    /* Vertex array and color array are enabled for all objects, so their
-     * pointers must always be valid and non-NULL. Normal array is not
-     * used by the ground plane, so when its pointer is NULL then normal
-     * array usage is disabled.
-     *
-     * Vertex array is supposed to use GL_FIXED datatype and stride 0
-     * (i.e. tightly packed array). Color array is supposed to have 4
-     * components per color with GL_UNSIGNED_BYTE datatype and stride 0.
-     * Normal array is supposed to use GL_FIXED datatype and stride 0.
-     */
-    GLfixed *vertexArray;
-    GLubyte *colorArray;
-    GLfixed *normalArray;
-    GLint vertexComponents;
-    GLsizei count;
-} GLOBJECT;
-
-
-static long sStartTick = 0;
-static long sTick = 0;
-
-static int sCurrentCamTrack = 0;
-static long sCurrentCamTrackStartTick = 0;
-static long sNextCamTrackStartTick = 0x7fffffff;
-
-static GLOBJECT *sSuperShapeObjects[SUPERSHAPE_COUNT] = { NULL };
-static GLOBJECT *sGroundPlane = NULL;
-
 
 typedef struct {
     float x, y, z;
@@ -396,7 +357,7 @@ static GLOBJECT * createGroundPlane()
 }
 
 
-static void drawGroundPlane()
+static void drawGroundPlane(struct OpenGLRender* render)
 {
     glDisable(GL_CULL_FACE);
     glDisable(GL_DEPTH_TEST);
@@ -404,7 +365,7 @@ static void drawGroundPlane()
     glBlendFunc(GL_ZERO, GL_SRC_COLOR);
     glDisable(GL_LIGHTING);
 
-    drawGLObject(sGroundPlane);
+    drawGLObject(render->sGroundPlane);
 
     glEnable(GL_LIGHTING);
     glDisable(GL_BLEND);
@@ -412,7 +373,7 @@ static void drawGroundPlane()
 }
 
 
-static void drawFadeQuad()
+static void drawFadeQuad(struct OpenGLRender* render)
 {
     static const GLfixed quadVertices[] = {
         -0x10000, -0x10000,
@@ -423,8 +384,8 @@ static void drawFadeQuad()
         -0x10000,  0x10000
     };
 
-    const int beginFade = sTick - sCurrentCamTrackStartTick;
-    const int endFade = sNextCamTrackStartTick - sTick;
+    const int beginFade = render->sTick - render->sCurrentCamTrackStartTick;
+    const int endFade = render->sNextCamTrackStartTick - render->sTick;
     const int minFade = beginFade < endFade ? beginFade : endFade;
 
     if (minFade < 1024)
@@ -458,9 +419,20 @@ static void drawFadeQuad()
     }
 }
 
+void initState(struct OpenGLRender* render) {
+    render->sStartTick = 0;
+    render->sTick = 0;
+
+    render->sCurrentCamTrack = 0;
+    render->sCurrentCamTrackStartTick = 0;
+    render->sNextCamTrackStartTick = 0x7fffffff;
+
+    memset(render->sSuperShapeObjects, 0, sizeof(render->sSuperShapeObjects));
+    render->sGroundPlane = NULL;
+}
 
 // Called from the app framework.
-void appInit()
+void appInit(struct OpenGLRender* render)
 {
     unsigned int a;
 
@@ -481,21 +453,21 @@ void appInit()
 
     for (a = 0; a < SUPERSHAPE_COUNT; ++a)
     {
-        sSuperShapeObjects[a] = createSuperShape(sSuperShapeParams[a]);
-        assert(sSuperShapeObjects[a] != NULL);
+        render->sSuperShapeObjects[a] = createSuperShape(sSuperShapeParams[a]);
+        assert(render->sSuperShapeObjects[a] != NULL);
     }
-    sGroundPlane = createGroundPlane();
-    assert(sGroundPlane != NULL);
+    render->sGroundPlane = createGroundPlane();
+    assert(render->sGroundPlane != NULL);
 }
 
 
 // Called from the app framework.
-void appDeinit()
+void appDeinit(struct OpenGLRender* render)
 {
     unsigned int a;
     for (a = 0; a < SUPERSHAPE_COUNT; ++a)
-        freeGLObject(sSuperShapeObjects[a]);
-    freeGLObject(sGroundPlane);
+        freeGLObject(render->sSuperShapeObjects[a]);
+    freeGLObject(render->sGroundPlane);
 }
 
 
@@ -557,7 +529,7 @@ static void configureLightAndMaterial()
 }
 
 
-static void drawModels(float zScale)
+static void drawModels(struct OpenGLRender* render, float zScale)
 {
     const int translationScale = 9;
     int x, y;
@@ -584,7 +556,7 @@ static void drawModels(float zScale)
             glRotatex((GLfixed)((randomUInt() % 360) << 16), 0, 0, 1 << 16);
             glScalex(fixedScale, fixedScale, fixedScale);
 
-            drawGLObject(sSuperShapeObjects[curShape]);
+            drawGLObject(render->sSuperShapeObjects[curShape]);
             glPopMatrix();
         }
     }
@@ -592,17 +564,17 @@ static void drawModels(float zScale)
     for (x = -2; x <= 2; ++x)
     {
         const int shipScale100 = translationScale * 500;
-        const int offs100 = x * shipScale100 + (sTick % shipScale100);
+        const int offs100 = x * shipScale100 + (render->sTick % shipScale100);
         float offs = offs100 * 0.01f;
         GLfixed fixedOffs = (GLfixed)(offs * 65536);
         glPushMatrix();
         glTranslatex(fixedOffs, -4 * 65536, 2 << 16);
-        drawGLObject(sSuperShapeObjects[SUPERSHAPE_COUNT - 1]);
+        drawGLObject(render->sSuperShapeObjects[SUPERSHAPE_COUNT - 1]);
         glPopMatrix();
         glPushMatrix();
         glTranslatex(-4 * 65536, fixedOffs, 4 << 16);
         glRotatex(90 << 16, 0, 0, 1 << 16);
-        drawGLObject(sSuperShapeObjects[SUPERSHAPE_COUNT - 1]);
+        drawGLObject(render->sSuperShapeObjects[SUPERSHAPE_COUNT - 1]);
         glPopMatrix();
     }
 }
@@ -699,7 +671,7 @@ static void gluLookAt(GLfloat eyex, GLfloat eyey, GLfloat eyez,
 }
 
 
-static void camTrack()
+static void camTrack(struct OpenGLRender* render)
 {
     float lerp[5];
     float eX, eY, eZ, cX, cY, cZ;
@@ -708,16 +680,16 @@ static void camTrack()
     long currentCamTick;
     int a;
 
-    if (sNextCamTrackStartTick <= sTick)
+    if (render->sNextCamTrackStartTick <= render->sTick)
     {
-        ++sCurrentCamTrack;
-        sCurrentCamTrackStartTick = sNextCamTrackStartTick;
+        ++render->sCurrentCamTrack;
+        render->sCurrentCamTrackStartTick = render->sNextCamTrackStartTick;
     }
-    sNextCamTrackStartTick = sCurrentCamTrackStartTick +
-                             sCamTracks[sCurrentCamTrack].len * CAMTRACK_LEN;
+    render->sNextCamTrackStartTick = render->sCurrentCamTrackStartTick +
+                             sCamTracks[render->sCurrentCamTrack].len * CAMTRACK_LEN;
 
-    cam = &sCamTracks[sCurrentCamTrack];
-    currentCamTick = sTick - sCurrentCamTrackStartTick;
+    cam = &sCamTracks[render->sCurrentCamTrack];
+    currentCamTick = render->sTick - render->sCurrentCamTrackStartTick;
     trackPos = (float)currentCamTick / (CAMTRACK_LEN * cam->len);
 
     for (a = 0; a < 5; ++a)
@@ -750,20 +722,20 @@ static void camTrack()
 /* The tick is current time in milliseconds, width and height
  * are the image dimensions to be rendered.
  */
-void appRender(long tick, int width, int height)
+void appRender(struct OpenGLRender* render, long tick, int width, int height)
 {
-    if (sStartTick == 0)
-        sStartTick = tick;
-    if (!gAppAlive)
+    if (render->sStartTick == 0)
+        render->sStartTick = tick;
+    if (!render->isAlive)
         return;
 
     // Actual tick value is "blurred" a little bit.
-    sTick = (sTick + tick - sStartTick) >> 1;
+    render->sTick = (render->sTick + tick - render->sStartTick) >> 1;
 
     // Terminate application after running through the demonstration once.
-    if (sTick >= RUN_LENGTH)
+    if (render->sTick >= RUN_LENGTH)
     {
-        gAppAlive = 0;
+        render->isAlive = 0;
         return;
     }
 
@@ -771,22 +743,22 @@ void appRender(long tick, int width, int height)
     prepareFrame(width, height);
 
     // Update the camera position and set the lookat.
-    camTrack();
+    camTrack(render);
 
     // Configure environment.
     configureLightAndMaterial();
 
     // Draw the reflection by drawing models with negated Z-axis.
     glPushMatrix();
-    drawModels(-1);
+    drawModels(render, -1);
     glPopMatrix();
 
     // Blend the ground plane to the window.
-    drawGroundPlane();
+    drawGroundPlane(render);
 
     // Draw all the models normally.
-    drawModels(1);
+    drawModels(render, 1);
 
     // Draw fade quad over whole window (when changing cameras).
-    drawFadeQuad();
+    drawFadeQuad(render);
 }

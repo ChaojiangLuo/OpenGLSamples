@@ -25,28 +25,64 @@
 #ifndef APP_H_INCLUDED
 #define APP_H_INCLUDED
 
+#include <GLES/gl.h>
+
+#include "shapes.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+// Total run length is 20 * camera track base unit length (see cams.h).
+#define RUN_LENGTH  (20 * CAMTRACK_LEN)
+#undef PI
+#define PI 3.1415926535897932f
+#define RANDOM_UINT_MAX 65535
 
 #define WINDOW_DEFAULT_WIDTH    640
 #define WINDOW_DEFAULT_HEIGHT   480
 
 #define WINDOW_BPP              16
 
+// Definition of one GL object in this demo.
+typedef struct {
+    /* Vertex array and color array are enabled for all objects, so their
+     * pointers must always be valid and non-NULL. Normal array is not
+     * used by the ground plane, so when its pointer is NULL then normal
+     * array usage is disabled.
+     *
+     * Vertex array is supposed to use GL_FIXED datatype and stride 0
+     * (i.e. tightly packed array). Color array is supposed to have 4
+     * components per color with GL_UNSIGNED_BYTE datatype and stride 0.
+     * Normal array is supposed to use GL_FIXED datatype and stride 0.
+     */
+    GLfixed *vertexArray;
+    GLubyte *colorArray;
+    GLfixed *normalArray;
+    GLint vertexComponents;
+    GLsizei count;
+} GLOBJECT;
+
+/**
+ * App saved state data.
+ */
+struct OpenGLRender {
+    int isAlive;
+    long sStartTick;
+    long sTick;
+
+    int sCurrentCamTrack;
+    long sCurrentCamTrackStartTick;
+    long sNextCamTrackStartTick;
+
+    GLOBJECT *sSuperShapeObjects[SUPERSHAPE_COUNT];
+    GLOBJECT *sGroundPlane;
+};
 
 // The simple framework expects the application code to define these functions.
-extern void appInit();
-extern void appDeinit();
-extern void appRender(long tick, int width, int height);
-
-/* Value is non-zero when application is alive, and 0 when it is closing.
- * Defined by the application framework.
- */
-extern int gAppAlive;
-
+extern void appInit(struct OpenGLRender* render);
+extern void appDeinit(struct OpenGLRender* render);
+extern void appRender(struct OpenGLRender* render, long tick, int width, int height);
 
 #ifdef __cplusplus
 }

@@ -10,10 +10,9 @@ set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -u ANativeActivity_o
 
 add_library( native_gl2_angeles
              SHARED
+             src/main/cpp/NativeMain.cpp
              src/main/cpp/MyLog.cpp
-             src/main/cpp/OpenGL2Basic.cpp
-             src/main/cpp/demo.c
-              )
+             src/main/cpp/demo.c )
 
 target_include_directories(native_gl2_angeles PRIVATE
             ${ANDROID_NDK}/sources/android/native_app_glue )
