@@ -1,0 +1,8 @@
+//
+// Created by luocj on 18-7-16.
+//
+
+#ifndef OPENGLSAMPLES_VAOVBODEMO_H
+#define OPENGLSAMPLES_VAOVBODEMO_H
+
+#endif //OPENGLSAMPLES_VAOVBODEMO_H
