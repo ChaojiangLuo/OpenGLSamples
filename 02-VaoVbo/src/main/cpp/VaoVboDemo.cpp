@@ -7,6 +7,7 @@
 #include <GLES3/gl3.h>
 
 #include "ShaderLoader.h"
+#include "MyLog.h"
 
 GLuint vShader, fShader;//顶点着色器对象
 
@@ -32,18 +33,18 @@ void initShader(const char *VShaderFile, const char *FShaderFile) {
     GLint major, minor;
     glGetIntegerv(GL_MAJOR_VERSION, &major);
     glGetIntegerv(GL_MINOR_VERSION, &minor);
-    cout << "GL Vendor    :" << vendor << endl;
-    cout << "GL Renderer  : " << renderer << endl;
-    cout << "GL Version (string)  : " << version << endl;
-    cout << "GL Version (integer) : " << major << "." << minor << endl;
-    cout << "GLSL Version : " << glslVersion << endl;
+    MyLOGI("GL Vendor    :%s" , vendor);
+    MyLOGI("GL Renderer  :%s" , renderer);
+    MyLOGI("GL Version (string)  :%s" , version);
+    MyLOGI("GL Version (integer) :%s.%s" , major, minor);
+    MyLOGI("GLSL Version :%s" , glslVersion);
 
     //2、编译着色器
     //创建着色器对象：顶点着色器
     vShader = glCreateShader(GL_VERTEX_SHADER);
     //错误检测
     if (0 == vShader) {
-        cerr << "ERROR : Create vertex shader failed" << endl;
+        MyLOGE("ERROR : Create vertex shader failed");
         exit(1);
     }
 
@@ -68,8 +69,7 @@ void initShader(const char *VShaderFile, const char *FShaderFile) {
             GLsizei written;
             //得到日志信息并输出
             glGetShaderInfoLog(vShader, logLen, &written, log);
-            cerr << "vertex shader compile log : " << endl;
-            cerr << log << endl;
+            MyLOGE("vertex shader compile log : %s" << log);
             free(log);//释放空间
         }
     }
@@ -78,7 +78,7 @@ void initShader(const char *VShaderFile, const char *FShaderFile) {
     fShader = glCreateShader(GL_FRAGMENT_SHADER);
     //错误检测
     if (0 == fShader) {
-        cerr << "ERROR : Create fragment shader failed" << endl;
+        MyLOGE("ERROR : Create fragment shader failed");
         exit(1);
     }
 
@@ -101,8 +101,7 @@ void initShader(const char *VShaderFile, const char *FShaderFile) {
             GLsizei written;
             //得到日志信息并输出
             glGetShaderInfoLog(fShader, logLen, &written, log);
-            cerr << "fragment shader compile log : " << endl;
-            cerr << log << endl;
+            MyLOGE("fragment shader compile log : %s");
             free(log);//释放空间
         }
     }
@@ -111,7 +110,7 @@ void initShader(const char *VShaderFile, const char *FShaderFile) {
     //创建着色器程序
     GLuint programHandle = glCreateProgram();
     if (!programHandle) {
-        cerr << "ERROR : create program failed" << endl;
+        MyLOGE("ERROR : create program failed");
         exit(1);
     }
     //将着色器程序链接到所创建的程序中
@@ -123,7 +122,7 @@ void initShader(const char *VShaderFile, const char *FShaderFile) {
     GLint linkStatus;
     glGetProgramiv(programHandle, GL_LINK_STATUS, &linkStatus);
     if (GL_FALSE == linkStatus) {
-        cerr << "ERROR : link shader program failed" << endl;
+        MyLOGE("ERROR : link shader program failed");
         GLint logLen;
         glGetProgramiv(programHandle, GL_INFO_LOG_LENGTH,
                        &logLen);
@@ -132,8 +131,7 @@ void initShader(const char *VShaderFile, const char *FShaderFile) {
             GLsizei written;
             glGetProgramInfoLog(programHandle, logLen,
                                 &written, log);
-            cerr << "Program log : " << endl;
-            cerr << log << endl;
+            MyLOGE("Program log : %s", log);
         }
     } else//链接成功，在OpenGL管线中使用渲染程序
     {
@@ -178,7 +176,7 @@ void init() {
     //初始化glew扩展库
     GLenum err = glewInit();
     if (GLEW_OK != err) {
-        cout << "Error initializing GLEW: " << glewGetErrorString(err) << endl;
+        MyLOGE("Error initializing GLEW: %s" , glewGetErrorString(err));
     }
 
     initShader("basic.vert", "basic.frag");
