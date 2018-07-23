@@ -22,5 +22,5 @@ target_link_libraries( native_gl2_vao_vbo
                        native_activity_glue
                        android
                        EGL
-                       GLESv1_CM
+                       GLESv3
                        log )

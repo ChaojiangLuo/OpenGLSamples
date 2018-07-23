@@ -5,7 +5,20 @@
 #ifndef OPENGLSAMPLES_NATIVE_MAIN_H
 #define OPENGLSAMPLES_NATIVE_MAIN_H
 
-#include "demo.h"
+#include <android/sensor.h>
+#include <android_native_app_glue.h>
+
+#include <cassert>
+#include <cstdlib>
+#include <cstring>
+#include <errno.h>
+
+#include <initializer_list>
+
+#include <EGL/egl.h>
+#include <GLES3/gl3.h>
+
+#include "VaoVboDemo.h"
 
 /**
  * Same as Media Player

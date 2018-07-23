@@ -2,14 +2,18 @@
 // Created by luocj on 18-7-16.
 // https://blog.csdn.net/xiajun07061225/article/details/7628146
 //
-#include <iostream>
+#define LOG_TAG "VaoVboDemo"
 
 #include <GLES3/gl3.h>
+#include <android_native_app_glue.h>
 
 #include "ShaderLoader.h"
 #include "MyLog.h"
+#include "VaoVboDemo.h"
 
 GLuint vShader, fShader;//顶点着色器对象
+GLint programHandle;
+GLuint vaoHandle;//vertex array object
 
 //顶点位置数组
 float positionData[] = {
@@ -22,10 +26,7 @@ float colorData[] = {
         0.0f, 1.0f, 0.0f,
         0.0f, 0.0f, 1.0f};
 
-GLuint vaoHandle;//vertex array object
-
-void initShader(const char *VShaderFile, const char *FShaderFile) {
-    //1、查看GLSL和OpenGL的版本
+void initShader(struct Engine *engine) {
     const GLubyte *renderer = glGetString(GL_RENDERER);
     const GLubyte *vendor = glGetString(GL_VENDOR);
     const GLubyte *version = glGetString(GL_VERSION);
@@ -33,85 +34,35 @@ void initShader(const char *VShaderFile, const char *FShaderFile) {
     GLint major, minor;
     glGetIntegerv(GL_MAJOR_VERSION, &major);
     glGetIntegerv(GL_MINOR_VERSION, &minor);
-    MyLOGI("GL Vendor    :%s" , vendor);
-    MyLOGI("GL Renderer  :%s" , renderer);
-    MyLOGI("GL Version (string)  :%s" , version);
-    MyLOGI("GL Version (integer) :%s.%s" , major, minor);
-    MyLOGI("GLSL Version :%s" , glslVersion);
+    MyLOGI("GL Vendor    : %s", vendor);
+    MyLOGI("GL Renderer  : %s", renderer);
+    MyLOGI("GL Version (string)  : %s", version);
+    MyLOGI("GL Version (integer) : %d.%d", major, minor);
+    MyLOGI("GLSL Version : %s", glslVersion);
 
-    //2、编译着色器
-    //创建着色器对象：顶点着色器
-    vShader = glCreateShader(GL_VERTEX_SHADER);
-    //错误检测
-    if (0 == vShader) {
-        MyLOGE("ERROR : Create vertex shader failed");
-        exit(1);
+    char *vShaderSource = readShaderSrcFile("shaders/basic.vert",
+                                            engine->app->activity->assetManager);
+    char *fShaderSource = readShaderSrcFile("shaders/basic.frag",
+                                            engine->app->activity->assetManager);
+
+    fShader = LoadShader(GL_FRAGMENT_SHADER, fShaderSource);
+    if (!fShader) {
+        MyLOGE("ERROR : LoadShader fragment shader failed");
+        return;
     }
 
-    //把着色器源代码和着色器对象相关联
-    const GLchar *vShaderCode = textFileRead(VShaderFile);
-    const GLchar *vCodeArray[1] = {vShaderCode};
-    glShaderSource(vShader, 1, vCodeArray, NULL);
-
-    //编译着色器对象
-    glCompileShader(vShader);
-
-
-    //检查编译是否成功
-    GLint compileResult;
-    glGetShaderiv(vShader, GL_COMPILE_STATUS, &compileResult);
-    if (GL_FALSE == compileResult) {
-        GLint logLen;
-        //得到编译日志长度
-        glGetShaderiv(vShader, GL_INFO_LOG_LENGTH, &logLen);
-        if (logLen > 0) {
-            char *log = (char *) malloc(logLen);
-            GLsizei written;
-            //得到日志信息并输出
-            glGetShaderInfoLog(vShader, logLen, &written, log);
-            MyLOGE("vertex shader compile log : %s" << log);
-            free(log);//释放空间
-        }
-    }
-
-    //创建着色器对象：片断着色器
-    fShader = glCreateShader(GL_FRAGMENT_SHADER);
-    //错误检测
-    if (0 == fShader) {
-        MyLOGE("ERROR : Create fragment shader failed");
-        exit(1);
-    }
-
-    //把着色器源代码和着色器对象相关联
-    const GLchar *fShaderCode = textFileRead(FShaderFile);
-    const GLchar *fCodeArray[1] = {fShaderCode};
-    glShaderSource(fShader, 1, fCodeArray, NULL);
-
-    //编译着色器对象
-    glCompileShader(fShader);
-
-    //检查编译是否成功
-    glGetShaderiv(fShader, GL_COMPILE_STATUS, &compileResult);
-    if (GL_FALSE == compileResult) {
-        GLint logLen;
-        //得到编译日志长度
-        glGetShaderiv(fShader, GL_INFO_LOG_LENGTH, &logLen);
-        if (logLen > 0) {
-            char *log = (char *) malloc(logLen);
-            GLsizei written;
-            //得到日志信息并输出
-            glGetShaderInfoLog(fShader, logLen, &written, log);
-            MyLOGE("fragment shader compile log : %s");
-            free(log);//释放空间
-        }
+    vShader = LoadShader(GL_VERTEX_SHADER, vShaderSource);
+    if (!vShader) {
+        MyLOGE("ERROR : LoadShader vertex shader failed");
+        return;
     }
 
     //3、链接着色器对象
     //创建着色器程序
-    GLuint programHandle = glCreateProgram();
+    programHandle = glCreateProgram();
     if (!programHandle) {
         MyLOGE("ERROR : create program failed");
-        exit(1);
+        return;
     }
     //将着色器程序链接到所创建的程序中
     glAttachShader(programHandle, vShader);
@@ -121,22 +72,27 @@ void initShader(const char *VShaderFile, const char *FShaderFile) {
     //查询链接的结果
     GLint linkStatus;
     glGetProgramiv(programHandle, GL_LINK_STATUS, &linkStatus);
-    if (GL_FALSE == linkStatus) {
+    if (linkStatus != GL_TRUE) {
         MyLOGE("ERROR : link shader program failed");
+
         GLint logLen;
         glGetProgramiv(programHandle, GL_INFO_LOG_LENGTH,
                        &logLen);
-        if (logLen > 0) {
+        if (logLen > 1) {
             char *log = (char *) malloc(logLen);
             GLsizei written;
             glGetProgramInfoLog(programHandle, logLen,
                                 &written, log);
             MyLOGE("Program log : %s", log);
+            free(log);
         }
-    } else//链接成功，在OpenGL管线中使用渲染程序
-    {
-        glUseProgram(programHandle);
+        glDetachShader(programHandle, vShader);
+        glDetachShader(programHandle, fShader);
+        glDeleteProgram(programHandle);
+        return;
     }
+    //链接成功，在OpenGL管线中使用渲染程序
+    glUseProgram(programHandle);
 }
 
 void initVBO() {
@@ -172,64 +128,27 @@ void initVBO() {
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLubyte *) NULL);
 }
 
-void init() {
-    //初始化glew扩展库
-    GLenum err = glewInit();
-    if (GLEW_OK != err) {
-        MyLOGE("Error initializing GLEW: %s" , glewGetErrorString(err));
-    }
-
-    initShader("basic.vert", "basic.frag");
+void appInit(struct Engine *engine) {
+    initShader(engine);
 
     initVBO();
 
     glClearColor(0.0, 0.0, 0.0, 0.0);
-    //glShadeModel(GL_SMOOTH);
 
 }
 
-void display() {
+void appDisplay(struct Engine *engine) {
     glClear(GL_COLOR_BUFFER_BIT);
-
-    ////绘制一个三角形(使用普通方法)
-    //glBegin(GL_TRIANGLES);
-    //glColor3f(0.0f,1.0f,0.0f);
-    //glVertex3f(0.0f,1.0f,0.0f);
-
-    //glColor3f(0.0f,1.0f,0.0f);
-    //glVertex3f(-1.0f,-1.0f,0.0f);
-
-    //glColor3f(0.0f,0.0f,1.0f);
-    //glVertex3f(1.0f,-1.0f,0.0f);
-    //glEnd();
 
     //使用VAO、VBO绘制
     glBindVertexArray(vaoHandle);
     glDrawArrays(GL_TRIANGLES, 0, 3);
     glBindVertexArray(0);
-
-    glutSwapBuffers();
 }
 
-void keyboard(unsigned char key, int x, int y) {
-    switch (key) {
-        case 27:
-            glDeleteShader(vShader);
-            glUseProgram(0);
-            break;
-    }
-}
-
-int main(int argc, char **argv) {
-    glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-    glutInitWindowSize(600, 600);
-    glutInitWindowPosition(100, 100);
-    glutCreateWindow("GLSL Test : Draw a triangle");
-    init();
-    glutDisplayFunc(display);
-    glutKeyboardFunc(keyboard);
-
-    glutMainLoop();
-    return 0;
+void appDeinit(struct Engine *engine) {
+    glDeleteShader(vShader);
+    glDeleteShader(fShader);
+    glDeleteProgram(programHandle);
+    glUseProgram(0);
 }

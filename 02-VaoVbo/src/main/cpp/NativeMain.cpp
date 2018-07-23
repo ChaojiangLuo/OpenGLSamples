@@ -5,25 +5,12 @@
 #undef  LOG_TAG
 #define LOG_TAG "OpenGL2Basic"
 
-#include <android/sensor.h>
-#include <android_native_app_glue.h>
-
-#include <cassert>
-#include <cstdlib>
-#include <cstring>
-#include <errno.h>
-
-#include <initializer_list>
-
-#include <EGL/egl.h>
-#include <GLES/gl.h>
-
 #include "EGLUtils.h"
 #include "GLUtils.h"
 #include "MyLog.h"
 #include "NativeMain.h"
 
-#include "demo.h"
+#include "VaoVboDemo.h"
 
 /**
  * Initialize an EGL context for the current display.
@@ -40,6 +27,11 @@ static int initDisplay(struct Engine *engine) {
             EGL_DEPTH_SIZE, 16,
             EGL_SAMPLE_BUFFERS, engine->samples ? 1 : 0,
             EGL_SAMPLES, engine->samples,
+            EGL_NONE
+    };
+
+    const EGLint ctxAttr[] = {
+            EGL_CONTEXT_CLIENT_VERSION, 3,              // 初始化3.0的上下文
             EGL_NONE
     };
 
@@ -85,7 +77,7 @@ static int initDisplay(struct Engine *engine) {
     checkEGLErrors("eglCreateWindowSurface");
     MyLOGI("surface = %p\n", surface);
 
-    context = eglCreateContext(display, config, NULL, NULL);
+    context = eglCreateContext(display, config, EGL_NO_CONTEXT, ctxAttr);
     checkEGLErrors("eglCreateContext");
     MyLOGI("context = %p\n", context);
 
@@ -147,8 +139,7 @@ int drawAppFrame(struct Engine *engine) {
     struct timeval timeNow;
 
     gettimeofday(&timeNow, NULL);
-    appRender(engine->render, timeNow.tv_sec * 1000 + timeNow.tv_usec / 1000,
-              engine->width, engine->height);
+    appDisplay(engine);
     checkGLErrors();
     eglSwapBuffers(engine->display, engine->surface);
     checkEGLErrors();
@@ -201,14 +192,10 @@ static int32_t engine_handle_input(struct android_app *app, AInputEvent *event) 
                 break;
 
             case AMOTION_EVENT_ACTION_UP:
-                struct timeval timeNow;
-
-                gettimeofday(&timeNow, NULL);
-                long now = timeNow.tv_sec * 1000 + timeNow.tv_usec / 1000;
                 if (engine->render->isAlive) {
-                    appPause(engine->render, now);
+                    engine->render->isAlive = 0;
                 } else {
-                    appPlay(engine->render, now);
+                    engine->render->isAlive = 1;
                 }
                 break;
         }
@@ -218,10 +205,8 @@ static int32_t engine_handle_input(struct android_app *app, AInputEvent *event) 
         MyLOGD("engine_handle_input-%d-AINPUT_EVENT_TYPE_KEY", AINPUT_EVENT_TYPE_KEY);
         switch (AKeyEvent_getKeyCode(event)) {
             case AKEYCODE_VOLUME_UP:
-                setLooping(engine->render, GL_TRUE);
                 break;
             case AKEYCODE_VOLUME_DOWN:
-                setLooping(engine->render, GL_FALSE);
                 break;
         }
     }
@@ -249,7 +234,7 @@ static void engine_handle_cmd(struct android_app *app, int32_t cmd) {
             if (engine->app->window != NULL) {
                 initDisplay(engine);
                 drawInitFrame(engine);
-                appInit(engine->render);
+                appInit(engine);
             }
             engine->playState = STATE_PREPARED;
             break;
@@ -481,7 +466,7 @@ void android_main(struct android_app *app) {
 
     gettimeofday(&timeTemp, NULL);
 
-    appDeinit(&render);
+    appDeinit(&engine);
     termDisplay(&engine);
 
     frameInfo.totalTime = (timeTemp.tv_usec / 1000000.0 + timeTemp.tv_sec) - frameInfo.totalTime;

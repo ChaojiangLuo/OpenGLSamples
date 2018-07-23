@@ -1,78 +1,73 @@
 //
 // Created by luocj on 18-7-16.
 //
+#define LOG_TAG "ShaderLoader"
 
 #include "ShaderLoader.h"
 
-unsigned char *readDataFromFile(char *path) {
-    FILE *fp;
-    unsigned char *content = NULL;
+char *readShaderSrcFile(const char *shaderFile, AAssetManager *pAssetManager) {
+    AAsset *pAsset = NULL;
+    char *pBuffer = NULL;
+    off_t size = -1;
+    int numByte = -1;
 
-    int count = 0;
-
-    if (path != NULL) {
-        fp = fopen(path, "rb");
-
-        if (fp != NULL) {
-
-            fseek(fp, 0, SEEK_END);
-            count = ftell(fp);
-            rewind(fp);
-
-            if (count > 0) {
-                content = (unsigned char *) malloc(sizeof(unsigned char) * (count + 1));
-                count = fread(content, sizeof(unsigned char), count, fp);
-                content[count] = '\0';
-            }
-            fclose(fp);
-        }
+    if (NULL == pAssetManager) {
+        MyLOGD("pAssetManager is null!");
+        return NULL;
     }
-    return content;
+    pAsset = AAssetManager_open(pAssetManager, shaderFile, AASSET_MODE_UNKNOWN);
+    //LOGI("after AAssetManager_open");
 
+    size = AAsset_getLength(pAsset);
+    MyLOGD("after AAssetManager_open");
+    pBuffer = (char *) malloc(size + 1);
+    pBuffer[size] = '\0';
+
+    numByte = AAsset_read(pAsset, pBuffer, size);
+    MyLOGD("%s : [%s]", shaderFile, pBuffer);
+    AAsset_close(pAsset);
+
+    return pBuffer;
 }
 
-char *readShaderFile(const char *path) {
 
+GLuint LoadShader(GLenum type, const char *shaderSrc) {
+    GLuint shader;
+    GLint compiled;
 
-    FILE *fp;
-    char *content = NULL;
+    // Create the shader object
+    shader = glCreateShader(type);
 
-    int count = 0;
-
-    if (path != NULL) {
-        fp = fopen(path, "rt");
-
-        if (fp != NULL) {
-
-            fseek(fp, 0, SEEK_END);
-            count = ftell(fp);
-            rewind(fp);
-
-            if (count > 0) {
-                content = (char *) malloc(sizeof(char) * (count + 1));
-                count = fread(content, sizeof(char), count, fp);
-                content[count] = '\0';
-            }
-            fclose(fp);
-        }
+    if (shader == 0) {
+        return 0;
     }
-    return content;
-}
 
-int writeShaderFile(char *path, char *s) {
+    // Load the shader source
+    glShaderSource(shader, 1, &shaderSrc, NULL);
 
-    FILE *fp;
-    int status = 0;
+    // Compile the shader
+    glCompileShader(shader);
 
-    if (path != NULL) {
-        fp = fopen(path, "w");
+    // Check the compile status
+    glGetShaderiv(shader, GL_COMPILE_STATUS, &compiled);
 
-        if (fp != NULL) {
+    if (!compiled) {
+        GLint infoLen = 0;
 
-            if (fwrite(s, sizeof(char), strlen(s), fp) == strlen(s))
-                status = 1;
-            fclose(fp);
+        glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &infoLen);
+
+        if (infoLen > 1) {
+            char *infoLog = (char *) malloc(sizeof(char) * infoLen);
+
+            glGetShaderInfoLog(shader, infoLen, NULL, infoLog);
+            MyLOGE("Error compiling shader:[%s]", infoLog);
+
+            free(infoLog);
         }
+
+        glDeleteShader(shader);
+        return 0;
     }
-    return (status);
+
+    return shader;
 }

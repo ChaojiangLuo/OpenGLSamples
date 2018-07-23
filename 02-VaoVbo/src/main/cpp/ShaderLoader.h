@@ -5,12 +5,17 @@
 #ifndef OPENGLSAMPLES_SHADERLOADER_H
 #define OPENGLSAMPLES_SHADERLOADER_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 
-char* readShaderFile(const char* path);
-int writeShaderFile(char* path, char* source);
-unsigned char* readDataFromFile(char* path);
+#include <android/asset_manager_jni.h>
+
+#include <GLES3/gl3.h>
+
+#include "MyLog.h"
+
+char *readShaderSrcFile(const char *shaderFile, AAssetManager *pAssetManager);
+
+GLuint LoadShader(GLenum type, const char *shaderSrc);
 
 #endif //OPENGLSAMPLES_SHADERLOADER_H
