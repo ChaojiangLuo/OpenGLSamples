@@ -1,1 +1,1 @@
-include ':app', ':01-Angeles', ':02-VaoVbo'
+include ':app', ':01-Angeles', ':02-VaoVbo', ':03-Texture'
