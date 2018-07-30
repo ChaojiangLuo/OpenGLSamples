@@ -1,1 +1,1 @@
-include ':app', ':01-Angeles', ':02-VaoVbo', ':03-Texture', ':CH01-01-Hello_Triangle', ':CH06-06-VBOAndNonVBO'
+include ':app', ':01-Angeles', ':02-VaoVbo', ':03-Texture', ':CH01-01-Hello_Triangle', ':CH06-06-VBOAndNonVBO', ':CH06-07-VertexArrayObjects'

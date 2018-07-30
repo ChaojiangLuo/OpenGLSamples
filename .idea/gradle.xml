@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/03-Texture" />
             <option value="$PROJECT_DIR$/CH01-01-Hello_Triangle" />
             <option value="$PROJECT_DIR$/CH06-06-VBOAndNonVBO" />
+            <option value="$PROJECT_DIR$/CH06-07-VertexArrayObjects" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
