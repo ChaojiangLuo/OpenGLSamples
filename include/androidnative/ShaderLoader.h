@@ -18,4 +18,6 @@ char *readShaderSrcFile(const char *shaderFile, AAssetManager *pAssetManager);
 
 GLuint LoadShader(GLenum type, const char *shaderSrc);
 
+GLuint loadProgram(const char *vertShaderSrc, const char *fragShaderSrc);
+
 #endif //OPENGLSAMPLES_SHADERLOADER_H
