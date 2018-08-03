@@ -1,5 +1,5 @@
 #undef  LOG_TAG
-#define LOG_TAG "MapBuffers"
+#define LOG_TAG "SimpleTexture2D"
 
 #include <androidnative/NativeMain.h>
 #include <androidnative/ShaderLoader.h>

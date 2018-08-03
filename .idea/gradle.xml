@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/CH06-08-MapBuffers" />
             <option value="$PROJECT_DIR$/CH08-01-Simple_VertexShader" />
             <option value="$PROJECT_DIR$/CH09-01-Simple_Texture2D" />
+            <option value="$PROJECT_DIR$/CH09-02-MipMap2D" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
