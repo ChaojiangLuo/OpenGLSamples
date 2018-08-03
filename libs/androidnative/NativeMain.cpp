@@ -374,6 +374,7 @@ ASensorManager *AcquireASensorManagerInstance(android_app *app) {
 void android_main(struct android_app *app) {
     MyLOGD("android_main start");
     struct Engine engine;
+    float lastTime;
 
     memset(&engine, 0, sizeof(Engine));
     app->userData = &engine;
@@ -413,6 +414,7 @@ void android_main(struct android_app *app) {
     gettimeofday(&timeTemp, NULL);
     frameInfo.totalTime = timeTemp.tv_usec / 1000000.0 + timeTemp.tv_sec;
 
+    lastTime = GetCurrentTime();
     // loop waiting for stuff to do.
     while (engine.isAlive) {
         // Read all pending events.
@@ -458,6 +460,14 @@ void android_main(struct android_app *app) {
         if (render.isAlive) {
             MyLOGD("android_main while engine.animating");
 
+            // Call app update function
+            if (engine.updateFunc != NULL) {
+                float curTime = GetCurrentTime();
+                float deltaTime = (curTime - lastTime);
+                lastTime = curTime;
+                engine.updateFunc(&engine, deltaTime);
+            }
+
             drawFrame(&engine);
         }
     }
@@ -474,10 +484,14 @@ void android_main(struct android_app *app) {
     MyLOGD("android_main end");
 }
 
-void registerDrawFunc ( Engine *engine, void (*drawFunc ) ( Engine * ) ) {
+void registerDrawFunc(Engine *engine, void (*drawFunc )(Engine *)) {
     engine->drawFunc = drawFunc;
 }
 
-void registerShutdownFunc ( Engine *engine, void (*shutdownFunc ) ( Engine * ) ) {
+void registerShutdownFunc(Engine *engine, void (*shutdownFunc )(Engine *)) {
     engine->shutdownFunc = shutdownFunc;
+}
+
+void registerUpdateFunc(Engine *engine, void (*updateFunc )(Engine *, float)) {
+    engine->updateFunc = updateFunc;
 }

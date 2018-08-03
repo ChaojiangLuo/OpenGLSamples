@@ -60,7 +60,7 @@ struct OpenGLRender {
 struct Engine {
     struct android_app *app;
 
-    void       *userData;
+    void *userData;
 
     ASensorManager *sensorManager;
     const ASensor *accelerometerSensor;
@@ -77,19 +77,33 @@ struct Engine {
     Play_State playState;
     Saved_State savedState;
 
-    struct OpenGLRender* render;
+    struct OpenGLRender *render;
     FrameInfo frameInfo;
 
     /// Callbacks
-    void (*drawFunc ) ( Engine * );
-    void (*shutdownFunc ) ( Engine * );
-    void (*keyFunc ) ( Engine *, unsigned char, int, int );
-    void (*updateFunc ) ( Engine *, float deltaTime );
+    void (*drawFunc )(Engine *);
+
+    void (*shutdownFunc )(Engine *);
+
+    void (*keyFunc )(Engine *, unsigned char, int, int);
+
+    void (*updateFunc )(Engine *, float deltaTime);
 };
 
-extern int appMain (struct Engine *engine );
+extern int appMain(struct Engine *engine);
 
-void registerShutdownFunc ( Engine *engine, void (*shutdownFunc ) ( Engine * ) );
-void registerDrawFunc ( Engine *engine, void (*drawFunc ) ( Engine * ) );
+void registerShutdownFunc(Engine *engine, void (*shutdownFunc )(Engine *));
+
+void registerDrawFunc(Engine *engine, void (*drawFunc )(Engine *));
+
+void registerUpdateFunc(Engine *engine, void (*updateFunc )(Engine *, float));
+
+
+static float GetCurrentTime() {
+    struct timespec clockRealTime;
+    clock_gettime(CLOCK_MONOTONIC, &clockRealTime);
+    double curTimeInSeconds = clockRealTime.tv_sec + (double) clockRealTime.tv_nsec / 1e9;
+    return (float) curTimeInSeconds;
+}
 
 #endif //OPENGLSAMPLES_NATIVE_MAIN_H
