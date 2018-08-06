@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/CH08-01-Simple_VertexShader" />
             <option value="$PROJECT_DIR$/CH09-01-Simple_Texture2D" />
             <option value="$PROJECT_DIR$/CH09-02-MipMap2D" />
+            <option value="$PROJECT_DIR$/CH09-03-TextureWrap" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
