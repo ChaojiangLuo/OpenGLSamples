@@ -24,6 +24,9 @@ static void checkGLErrors() {
         MyLOGE("GL Error: 0x%04x\n", (int) error);
 }
 
+int esGenSphere(int numSlices, float radius, GLfloat **vertices, GLfloat **normals,
+                GLfloat **texCoords, GLuint **indices);
+
 int esGenCube(float scale, GLfloat **vertices, GLfloat **normals,
               GLfloat **texCoords, GLuint **indices);
 
