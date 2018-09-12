@@ -11,6 +11,9 @@ typedef struct {
     // Handle to a program object
     GLuint programObject;
 
+    // Uniform locations
+    GLint mvpLoc;
+
     // Sampler locations
     GLint baseMapLoc;
     GLint lightMapLoc;
@@ -19,6 +22,9 @@ typedef struct {
     GLuint baseMapTexId;
     GLuint lightMapTexId;
 
+    // MVP matrix
+    ESMatrix mvpMatrix;
+    GLfloat light;
 } UserData;
 
 ///
@@ -57,12 +63,13 @@ int Init(Engine *esContext) {
     UserData *userData = (UserData *) esContext->userData;
     char vShaderStr[] =
             "#version 300 es                            \n"
+                    "uniform mat4 u_mvpMatrix;                  \n"
                     "layout(location = 0) in vec4 a_position;   \n"
                     "layout(location = 1) in vec2 a_texCoord;   \n"
                     "out vec2 v_texCoord;                       \n"
                     "void main()                                \n"
                     "{                                          \n"
-                    "   gl_Position = a_position;               \n"
+                    "   gl_Position = u_mvpMatrix * a_position; \n"
                     "   v_texCoord = a_texCoord;                \n"
                     "}                                          \n";
 
@@ -71,6 +78,7 @@ int Init(Engine *esContext) {
                     "precision mediump float;                            \n"
                     "in vec2 v_texCoord;                                 \n"
                     "layout(location = 0) out vec4 outColor;             \n"
+                    "uniform float s_light;                              \n"
                     "uniform sampler2D s_baseMap;                        \n"
                     "uniform sampler2D s_lightMap;                       \n"
                     "void main()                                         \n"
@@ -80,7 +88,7 @@ int Init(Engine *esContext) {
                     "                                                    \n"
                     "  baseColor = texture( s_baseMap, v_texCoord );     \n"
                     "  lightColor = texture( s_lightMap, v_texCoord );   \n"
-                    "  outColor = baseColor * (lightColor + 0.25);       \n"
+                    "  outColor = baseColor * (lightColor + s_light);    \n"
                     "}                                                   \n";
 
     // Load the shaders and get a linked program object
@@ -98,8 +106,35 @@ int Init(Engine *esContext) {
         return GL_FALSE;
     }
 
+    userData->light = glGetUniformLocation(userData->programObject, "s_light");
+
+    // Get the uniform locations
+    userData->mvpLoc = glGetUniformLocation(userData->programObject, "u_mvpMatrix");
+
     glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
     return GL_TRUE;
+}
+
+void updatePosition(Engine *engine, int quadrant) {
+    UserData *userData = (UserData *) engine->userData;
+    ESMatrix perspective;
+    ESMatrix modelview;
+
+    // Generate a perspective matrix with a 60 degree FOV
+    esMatrixLoadIdentity(&perspective);
+
+    // Generate a model view matrix to rotate/translate the cube
+    esMatrixLoadIdentity(&modelview);
+
+    float x = (0x1 & quadrant) != 0 ? 1.0 : 0.0;
+    float y = (0x2 & quadrant) != 0 ? -1.0 : 0.0;
+
+    // Translate away from the viewer
+    esTranslate(&modelview, x, y, 0.0);
+
+    // Compute the final MVP by multiplying the
+    // modevleiw and perspective matrices together
+    esMatrixMultiply(&userData->mvpMatrix, &modelview, &perspective);
 }
 
 ///
@@ -141,8 +176,6 @@ void Draw(Engine *esContext) {
     // Set the light map sampler to texture unit 1
     glUniform1i(userData->lightMapLoc, 1);
 
-    // luocj
-
     // Load the vertex position
     glVertexAttribPointer(0, 3, GL_FLOAT,
                           GL_FALSE, 5 * sizeof(GLfloat), vVertices);
@@ -153,7 +186,14 @@ void Draw(Engine *esContext) {
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
 
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
+    for (int i = 0; i < 4; i++) {
+        updatePosition(esContext, i);
+        // Load the MVP matrix
+        glUniform1f(userData->light, 0.1 * (i + 1));
+        glUniformMatrix4fv(userData->mvpLoc, 1, GL_FALSE, (GLfloat *) &userData->mvpMatrix.m[0][0]);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
+    }
+
 }
 
 ///
