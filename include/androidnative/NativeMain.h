@@ -60,6 +60,8 @@ struct OpenGLRender {
 struct Engine {
     struct android_app *app;
 
+    void* platformData;
+
     void *userData;
 
     ASensorManager *sensorManager;

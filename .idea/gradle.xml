@@ -20,6 +20,7 @@
             <option value="$PROJECT_DIR$/CH09-02-MipMap2D" />
             <option value="$PROJECT_DIR$/CH09-03-TextureWrap" />
             <option value="$PROJECT_DIR$/CH09-04-Simple_TextureCubemap" />
+            <option value="$PROJECT_DIR$/CH10-01-MultiTexture" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
