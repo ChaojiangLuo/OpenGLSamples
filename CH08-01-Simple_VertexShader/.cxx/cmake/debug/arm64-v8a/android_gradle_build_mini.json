@@ -1,0 +1,36 @@
+{
+  "buildFiles": [
+    "/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/CMakeLists.txt",
+    "/home/luocj/my_works/sources/OpenGLSamples/libs/androidnative/CMakeLists.txt",
+    "/home/luocj/my_works/sources/OpenGLSamples/libs/glesutils/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/arm64-v8a --target clean"
+  ],
+  "libraries": {
+    "androidnative-Debug-arm64-v8a": {
+      "artifactName": "androidnative",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/arm64-v8a --target androidnative",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/arm64-v8a/androidnative/libandroidnative.a"
+    },
+    "simple_vertex_shader-Debug-arm64-v8a": {
+      "artifactName": "simple_vertex_shader",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/arm64-v8a --target simple_vertex_shader",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/build/intermediates/cmake/debug/obj/arm64-v8a/libsimple_vertex_shader.so"
+    },
+    "glesutils-Debug-arm64-v8a": {
+      "artifactName": "glesutils",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/arm64-v8a --target glesutils",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/arm64-v8a/glesutils/libglesutils.a"
+    },
+    "native_activity_glue-Debug-arm64-v8a": {
+      "artifactName": "native_activity_glue",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/arm64-v8a --target native_activity_glue",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/arm64-v8a/androidnative/libnative_activity_glue.a"
+    }
+  }
+}

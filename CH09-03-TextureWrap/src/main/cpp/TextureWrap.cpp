@@ -21,6 +21,7 @@ typedef struct {
 
 } UserData;
 
+
 ///
 //  Generate an RGB8 checkerboard image
 //
@@ -31,6 +32,8 @@ GLubyte *GenCheckImage(int width, int height, int checkSize) {
     if (pixels == NULL) {
         return NULL;
     }
+
+
 
     for (y = 0; y < height; y++)
         for (x = 0; x < width; x++) {
@@ -59,8 +62,7 @@ GLubyte *GenCheckImage(int width, int height, int checkSize) {
 GLuint CreateTexture2D() {
     // Texture object handle
     GLuint textureId;
-    int width = 256,
-            height = 256;
+    int width = 256, height = 256;
     GLubyte *pixels;
 
     pixels = GenCheckImage(width, height, 64);

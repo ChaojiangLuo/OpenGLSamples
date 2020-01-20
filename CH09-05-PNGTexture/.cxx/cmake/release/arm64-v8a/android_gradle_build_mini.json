@@ -1,0 +1,128 @@
+{
+  "buildFiles": [
+    "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/CMakeLists.txt",
+    "/home/luocj/my_works/sources/OpenGLSamples/libs/androidnative/CMakeLists.txt",
+    "/home/luocj/my_works/sources/OpenGLSamples/libs/glesutils/CMakeLists.txt",
+    "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/CMakeLists.txt",
+    "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target clean"
+  ],
+  "libraries": {
+    "zlibstatic-Release-arm64-v8a": {
+      "artifactName": "zlibstatic",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target zlibstatic",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/zlib/libz.a"
+    },
+    "glesutils-Release-arm64-v8a": {
+      "artifactName": "glesutils",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target glesutils",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/glesutils/libglesutils.a"
+    },
+    "pngtest-Release-arm64-v8a": {
+      "artifactName": "pngtest",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target pngtest",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/png/pngtest"
+    },
+    "minigzip-Release-arm64-v8a": {
+      "artifactName": "minigzip",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target minigzip",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/zlib/minigzip"
+    },
+    "example-Release-arm64-v8a": {
+      "artifactName": "example",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target example",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/zlib/example"
+    },
+    "minigzip64-Release-arm64-v8a": {
+      "artifactName": "minigzip64",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target minigzip64",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/zlib/minigzip64"
+    },
+    "pngvalid-Release-arm64-v8a": {
+      "artifactName": "pngvalid",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target pngvalid",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/png/pngvalid"
+    },
+    "native_activity_glue-Release-arm64-v8a": {
+      "artifactName": "native_activity_glue",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target native_activity_glue",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/androidnative/libnative_activity_glue.a"
+    },
+    "androidnative-Release-arm64-v8a": {
+      "artifactName": "androidnative",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target androidnative",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/androidnative/libandroidnative.a"
+    },
+    "pngimage-Release-arm64-v8a": {
+      "artifactName": "pngimage",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target pngimage",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/png/pngimage"
+    },
+    "zlib-Release-arm64-v8a": {
+      "artifactName": "zlib",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target zlib",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/build/intermediates/cmake/release/obj/arm64-v8a/libz.so"
+    },
+    "pngfix-Release-arm64-v8a": {
+      "artifactName": "pngfix",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target pngfix",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/png/pngfix"
+    },
+    "pngstest-Release-arm64-v8a": {
+      "artifactName": "pngstest",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target pngstest",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/png/pngstest"
+    },
+    "png-Release-arm64-v8a": {
+      "artifactName": "png",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target png",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/build/intermediates/cmake/release/obj/arm64-v8a/libpng16.so"
+    },
+    "png_static-Release-arm64-v8a": {
+      "artifactName": "png_static",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target png_static",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/png/libpng16.a"
+    },
+    "pngunknown-Release-arm64-v8a": {
+      "artifactName": "pngunknown",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target pngunknown",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/png/pngunknown"
+    },
+    "example64-Release-arm64-v8a": {
+      "artifactName": "example64",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target example64",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/zlib/example64"
+    },
+    "opengles_simples-Release-arm64-v8a": {
+      "artifactName": "opengles_simples",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target opengles_simples",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/build/intermediates/cmake/release/obj/arm64-v8a/libopengles_simples.so"
+    },
+    "png-fix-itxt-Release-arm64-v8a": {
+      "artifactName": "png-fix-itxt",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a --target png-fix-itxt",
+      "abi": "arm64-v8a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/arm64-v8a/png/png-fix-itxt"
+    }
+  }
+}

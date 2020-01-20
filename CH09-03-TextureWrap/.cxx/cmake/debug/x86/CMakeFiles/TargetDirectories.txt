@@ -1,0 +1,10 @@
+/home/luocj/my_works/sources/OpenGLSamples/CH09-03-TextureWrap/.cxx/cmake/debug/x86/CMakeFiles/edit_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH09-03-TextureWrap/.cxx/cmake/debug/x86/CMakeFiles/rebuild_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH09-03-TextureWrap/.cxx/cmake/debug/x86/CMakeFiles/opengles_simples.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH09-03-TextureWrap/.cxx/cmake/debug/x86/androidnative/CMakeFiles/edit_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH09-03-TextureWrap/.cxx/cmake/debug/x86/androidnative/CMakeFiles/rebuild_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH09-03-TextureWrap/.cxx/cmake/debug/x86/androidnative/CMakeFiles/native_activity_glue.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH09-03-TextureWrap/.cxx/cmake/debug/x86/androidnative/CMakeFiles/androidnative.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH09-03-TextureWrap/.cxx/cmake/debug/x86/glesutils/CMakeFiles/edit_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH09-03-TextureWrap/.cxx/cmake/debug/x86/glesutils/CMakeFiles/rebuild_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH09-03-TextureWrap/.cxx/cmake/debug/x86/glesutils/CMakeFiles/glesutils.dir

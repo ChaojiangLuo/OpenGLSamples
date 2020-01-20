@@ -1,0 +1,21 @@
+[1/18] Building C object png/CMakeFiles/png.dir/png.c.o
+[2/18] Building C object png/CMakeFiles/png.dir/pngerror.c.o
+[3/18] Building C object png/CMakeFiles/png.dir/pngget.c.o
+[4/18] Building C object png/CMakeFiles/png.dir/pngmem.c.o
+[5/18] Building C object png/CMakeFiles/png.dir/pngpread.c.o
+[6/18] Building C object png/CMakeFiles/png.dir/pngread.c.o
+[7/18] Building C object png/CMakeFiles/png.dir/pngrio.c.o
+[8/18] Building C object png/CMakeFiles/png.dir/pngrtran.c.o
+[9/18] Building C object png/CMakeFiles/png.dir/pngrutil.c.o
+[10/18] Building C object png/CMakeFiles/png.dir/pngset.c.o
+[11/18] Building C object png/CMakeFiles/png.dir/pngtrans.c.o
+[12/18] Building C object png/CMakeFiles/png.dir/pngwio.c.o
+[13/18] Building C object png/CMakeFiles/png.dir/pngwrite.c.o
+[14/18] Building C object png/CMakeFiles/png.dir/pngwtran.c.o
+[15/18] Building C object png/CMakeFiles/png.dir/pngwutil.c.o
+[16/18] Linking C shared library ../../../../build/intermediates/cmake/debug/obj/x86/libpng16d.so
+FAILED: : && /home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack   -Wl,--version-script='/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/png/libpng.vers' -shared -Wl,-soname,libpng16d.so -o ../../../../build/intermediates/cmake/debug/obj/x86/libpng16d.so png/CMakeFiles/png.dir/png.c.o png/CMakeFiles/png.dir/pngerror.c.o png/CMakeFiles/png.dir/pngget.c.o png/CMakeFiles/png.dir/pngmem.c.o png/CMakeFiles/png.dir/pngpread.c.o png/CMakeFiles/png.dir/pngread.c.o png/CMakeFiles/png.dir/pngrio.c.o png/CMakeFiles/png.dir/pngrtran.c.o png/CMakeFiles/png.dir/pngrutil.c.o png/CMakeFiles/png.dir/pngset.c.o png/CMakeFiles/png.dir/pngtrans.c.o png/CMakeFiles/png.dir/pngwio.c.o png/CMakeFiles/png.dir/pngwrite.c.o png/CMakeFiles/png.dir/pngwtran.c.o png/CMakeFiles/png.dir/pngwutil.c.o  -Wl,-Bstatic -lz -lm -Wl,-Bdynamic -latomic -lm && cd /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/png && /home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake -E create_symlink libpng16d.so /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/build/intermediates/cmake/debug/obj/x86/libpng.so
+/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin/ld: error: cannot open /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/png/libpng.vers: No such file or directory
+/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin/ld: fatal error: unable to parse version script file /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/png/libpng.vers
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.

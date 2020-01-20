@@ -1,0 +1,10 @@
+/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/x86_64/CMakeFiles/edit_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/x86_64/CMakeFiles/rebuild_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/x86_64/CMakeFiles/simple_vertex_shader.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/x86_64/androidnative/CMakeFiles/edit_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/x86_64/androidnative/CMakeFiles/rebuild_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/x86_64/androidnative/CMakeFiles/native_activity_glue.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/x86_64/androidnative/CMakeFiles/androidnative.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/x86_64/glesutils/CMakeFiles/edit_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/x86_64/glesutils/CMakeFiles/rebuild_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/debug/x86_64/glesutils/CMakeFiles/glesutils.dir

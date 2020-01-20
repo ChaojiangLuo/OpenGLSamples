@@ -1,0 +1,24 @@
+[1/22] Building C object png/CMakeFiles/png.dir/png.c.o
+[2/22] Building C object png/CMakeFiles/png.dir/pngerror.c.o
+[3/22] Building C object png/CMakeFiles/png.dir/pngget.c.o
+[4/22] Building C object png/CMakeFiles/png.dir/pngmem.c.o
+[5/22] Building C object png/CMakeFiles/png.dir/pngpread.c.o
+[6/22] Building C object png/CMakeFiles/png.dir/pngread.c.o
+[7/22] Building C object png/CMakeFiles/png.dir/pngrio.c.o
+[8/22] Building C object png/CMakeFiles/png.dir/pngrtran.c.o
+[9/22] Building C object png/CMakeFiles/png.dir/pngrutil.c.o
+[10/22] Building C object png/CMakeFiles/png.dir/pngset.c.o
+[11/22] Building C object png/CMakeFiles/png.dir/pngtrans.c.o
+[12/22] Building C object png/CMakeFiles/png.dir/pngwio.c.o
+[13/22] Building C object png/CMakeFiles/png.dir/pngwrite.c.o
+[14/22] Building C object png/CMakeFiles/png.dir/pngwtran.c.o
+[15/22] Building C object png/CMakeFiles/png.dir/pngwutil.c.o
+[16/22] Building C object png/CMakeFiles/png.dir/arm/arm_init.c.o
+[17/22] Building ASM object png/CMakeFiles/png.dir/arm/filter_neon.S.o
+[18/22] Building C object png/CMakeFiles/png.dir/arm/filter_neon_intrinsics.c.o
+[19/22] Building C object png/CMakeFiles/png.dir/arm/palette_neon_intrinsics.c.o
+[20/22] Linking C shared library ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libpng16d.so
+FAILED: : && /home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang  --target=aarch64-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -fno-experimental-isel  -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack   -Wl,--version-script='/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/arm64-v8a/png/libpng.vers' -shared -Wl,-soname,libpng16d.so -o ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libpng16d.so png/CMakeFiles/png.dir/png.c.o png/CMakeFiles/png.dir/pngerror.c.o png/CMakeFiles/png.dir/pngget.c.o png/CMakeFiles/png.dir/pngmem.c.o png/CMakeFiles/png.dir/pngpread.c.o png/CMakeFiles/png.dir/pngread.c.o png/CMakeFiles/png.dir/pngrio.c.o png/CMakeFiles/png.dir/pngrtran.c.o png/CMakeFiles/png.dir/pngrutil.c.o png/CMakeFiles/png.dir/pngset.c.o png/CMakeFiles/png.dir/pngtrans.c.o png/CMakeFiles/png.dir/pngwio.c.o png/CMakeFiles/png.dir/pngwrite.c.o png/CMakeFiles/png.dir/pngwtran.c.o png/CMakeFiles/png.dir/pngwutil.c.o png/CMakeFiles/png.dir/arm/arm_init.c.o png/CMakeFiles/png.dir/arm/filter_neon.S.o png/CMakeFiles/png.dir/arm/filter_neon_intrinsics.c.o png/CMakeFiles/png.dir/arm/palette_neon_intrinsics.c.o  -Wl,-Bstatic -lz -lm -Wl,-Bdynamic -latomic -lm && cd /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/arm64-v8a/png && /home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake -E create_symlink libpng16d.so /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/build/intermediates/cmake/debug/obj/arm64-v8a/libpng.so
+/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld: cannot open linker script file /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/arm64-v8a/png/libpng.vers: No such file or directory
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.

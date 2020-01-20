@@ -1,0 +1,36 @@
+{
+  "buildFiles": [
+    "/home/luocj/my_works/sources/OpenGLSamples/CH09-04-Simple_TextureCubemap/CMakeLists.txt",
+    "/home/luocj/my_works/sources/OpenGLSamples/libs/androidnative/CMakeLists.txt",
+    "/home/luocj/my_works/sources/OpenGLSamples/libs/glesutils/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-04-Simple_TextureCubemap/.cxx/cmake/debug/x86_64 --target clean"
+  ],
+  "libraries": {
+    "opengles_simples-Debug-x86_64": {
+      "artifactName": "opengles_simples",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-04-Simple_TextureCubemap/.cxx/cmake/debug/x86_64 --target opengles_simples",
+      "abi": "x86_64",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-04-Simple_TextureCubemap/build/intermediates/cmake/debug/obj/x86_64/libopengles_simples.so"
+    },
+    "glesutils-Debug-x86_64": {
+      "artifactName": "glesutils",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-04-Simple_TextureCubemap/.cxx/cmake/debug/x86_64 --target glesutils",
+      "abi": "x86_64",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-04-Simple_TextureCubemap/.cxx/cmake/debug/x86_64/glesutils/libglesutils.a"
+    },
+    "native_activity_glue-Debug-x86_64": {
+      "artifactName": "native_activity_glue",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-04-Simple_TextureCubemap/.cxx/cmake/debug/x86_64 --target native_activity_glue",
+      "abi": "x86_64",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-04-Simple_TextureCubemap/.cxx/cmake/debug/x86_64/androidnative/libnative_activity_glue.a"
+    },
+    "androidnative-Debug-x86_64": {
+      "artifactName": "androidnative",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-04-Simple_TextureCubemap/.cxx/cmake/debug/x86_64 --target androidnative",
+      "abi": "x86_64",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-04-Simple_TextureCubemap/.cxx/cmake/debug/x86_64/androidnative/libandroidnative.a"
+    }
+  }
+}

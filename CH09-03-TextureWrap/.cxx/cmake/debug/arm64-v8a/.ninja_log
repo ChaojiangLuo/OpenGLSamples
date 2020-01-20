@@ -1,0 +1,16 @@
+# ninja log v5
+1	652	0	glesutils/CMakeFiles/glesutils.dir/AssetUtils.cpp.o	7797120f803d1b31
+1	710	0	androidnative/CMakeFiles/native_activity_glue.dir/home/luocj/Android/Sdk/ndk-bundle/sources/android/native_app_glue/android_native_app_glue.c.o	289f5860a53f6238
+1	947	0	glesutils/CMakeFiles/glesutils.dir/Shapes.cpp.o	f44c49a2e1ac5487
+1	947	0	glesutils/CMakeFiles/glesutils.dir/GLESUtils.cpp.o	49f0d54ae235be78
+710	1213	0	androidnative/libnative_activity_glue.a	a1f64f861e17d18c
+947	1213	0	glesutils/libglesutils.a	3356a4207dbe1852
+1213	1228	0	androidnative/CMakeFiles/androidnative.dir/MyLog.cpp.o	c62ce8b6549907fd
+1213	1264	0	androidnative/CMakeFiles/androidnative.dir/ShaderLoader.cpp.o	c1ac8539fa47fa8
+1213	1425	0	androidnative/CMakeFiles/androidnative.dir/NativeMain.cpp.o	5f9b25ac684fe595
+1425	1445	0	androidnative/libandroidnative.a	7ad13333aa22268c
+1445	1561	0	CMakeFiles/opengles_simples.dir/src/main/cpp/TextureWrap.cpp.o	262a84ea2a944303
+1561	1754	0	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libopengles_simples.so	aadbf118dd518b4d
+1	51	0	glesutils/CMakeFiles/glesutils.dir/AssetUtils.cpp.o	7797120f803d1b31
+51	73	0	glesutils/libglesutils.a	3356a4207dbe1852
+73	128	0	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libopengles_simples.so	aadbf118dd518b4d

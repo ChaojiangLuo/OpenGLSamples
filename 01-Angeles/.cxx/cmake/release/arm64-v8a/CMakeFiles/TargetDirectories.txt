@@ -1,0 +1,4 @@
+/home/luocj/my_works/sources/OpenGLSamples/01-Angeles/.cxx/cmake/release/arm64-v8a/CMakeFiles/edit_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/01-Angeles/.cxx/cmake/release/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/01-Angeles/.cxx/cmake/release/arm64-v8a/CMakeFiles/native_gl2_angeles.dir
+/home/luocj/my_works/sources/OpenGLSamples/01-Angeles/.cxx/cmake/release/arm64-v8a/CMakeFiles/native_activity_glue.dir

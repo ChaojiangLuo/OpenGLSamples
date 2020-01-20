@@ -1,0 +1,10 @@
+/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/release/x86_64/CMakeFiles/edit_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/release/x86_64/CMakeFiles/rebuild_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/release/x86_64/CMakeFiles/opengles_simples.dir
+/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/release/x86_64/androidnative/CMakeFiles/edit_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/release/x86_64/androidnative/CMakeFiles/rebuild_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/release/x86_64/androidnative/CMakeFiles/native_activity_glue.dir
+/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/release/x86_64/androidnative/CMakeFiles/androidnative.dir
+/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/release/x86_64/glesutils/CMakeFiles/edit_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/release/x86_64/glesutils/CMakeFiles/rebuild_cache.dir
+/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/release/x86_64/glesutils/CMakeFiles/glesutils.dir

@@ -105,7 +105,7 @@ static int esFileRead(esFile *pFile, int bytesToRead, void *buffer) {
 
 #ifdef ANDROID
     bytesRead = AAsset_read(pFile, buffer, bytesToRead);
-    MyLOGE ("esFileRead AAsset_read pFile %d %lu %lu\n", bytesRead, sizeof(unsigned short), sizeof(unsigned char));
+    MyLOGE ("esFileRead AAsset_read pFile %d %zu %zu\n", bytesRead, sizeof(unsigned short), sizeof(unsigned char));
 #else
     bytesRead = fread ( buffer, bytesToRead, 1, pFile );
 #endif

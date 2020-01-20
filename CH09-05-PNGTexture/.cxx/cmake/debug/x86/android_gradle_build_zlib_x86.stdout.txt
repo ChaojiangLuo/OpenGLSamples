@@ -1,0 +1,16 @@
+[1/16] Building C object zlib/CMakeFiles/zlib.dir/compress.o
+[2/16] Building C object zlib/CMakeFiles/zlib.dir/adler32.o
+[3/16] Building C object zlib/CMakeFiles/zlib.dir/crc32.o
+[4/16] Building C object zlib/CMakeFiles/zlib.dir/deflate.o
+[5/16] Building C object zlib/CMakeFiles/zlib.dir/gzclose.o
+[6/16] Building C object zlib/CMakeFiles/zlib.dir/gzlib.o
+[7/16] Building C object zlib/CMakeFiles/zlib.dir/gzread.o
+[8/16] Building C object zlib/CMakeFiles/zlib.dir/gzwrite.o
+[9/16] Building C object zlib/CMakeFiles/zlib.dir/inflate.o
+[10/16] Building C object zlib/CMakeFiles/zlib.dir/infback.o
+[11/16] Building C object zlib/CMakeFiles/zlib.dir/inftrees.o
+[12/16] Building C object zlib/CMakeFiles/zlib.dir/inffast.o
+[13/16] Building C object zlib/CMakeFiles/zlib.dir/trees.o
+[14/16] Building C object zlib/CMakeFiles/zlib.dir/uncompr.o
+[15/16] Building C object zlib/CMakeFiles/zlib.dir/zutil.o
+[16/16] Linking C shared library ../../../../build/intermediates/cmake/debug/obj/x86/libz.so

@@ -1,0 +1,742 @@
+
+{
+	"buildFiles" : 
+	[
+		"/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/CMakeLists.txt",
+		"/home/luocj/my_works/sources/OpenGLSamples/libs/androidnative/CMakeLists.txt",
+		"/home/luocj/my_works/sources/OpenGLSamples/libs/glesutils/CMakeLists.txt",
+		"/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/CMakeLists.txt",
+		"/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/CMakeLists.txt"
+	],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"androidnative-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "androidnative",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target androidnative",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -I/home/luocj/Android/Sdk/ndk-bundle/sources/android/native_app_glue -I/home/luocj/my_works/sources/OpenGLSamples/libs/androidnative/../../include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=c++11  -Werror -D VK_USE_PLATFORM_ANDROID_KHR -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/libs/androidnative/MyLog.cpp",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -I/home/luocj/Android/Sdk/ndk-bundle/sources/android/native_app_glue -I/home/luocj/my_works/sources/OpenGLSamples/libs/androidnative/../../include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=c++11  -Werror -D VK_USE_PLATFORM_ANDROID_KHR -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/libs/androidnative/NativeMain.cpp",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -I/home/luocj/Android/Sdk/ndk-bundle/sources/android/native_app_glue -I/home/luocj/my_works/sources/OpenGLSamples/libs/androidnative/../../include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=c++11  -Werror -D VK_USE_PLATFORM_ANDROID_KHR -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/libs/androidnative/ShaderLoader.cpp",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/androidnative/libandroidnative.a",
+			"toolchain" : "6191103400009865258"
+		},
+		"example-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "example",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target example",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/test/example.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/zlib/example",
+			"toolchain" : "6191103400009865258"
+		},
+		"example64-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "example64",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target example64",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIE   -D_FILE_OFFSET_BITS=64    -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/test/example.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/zlib/example64",
+			"toolchain" : "6191103400009865258"
+		},
+		"glesutils-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "glesutils",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target glesutils",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -I/home/luocj/Android/Sdk/ndk-bundle/sources/android/native_app_glue -I/home/luocj/my_works/sources/OpenGLSamples/libs/glesutils/../../include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=c++11  -Werror -D VK_USE_PLATFORM_ANDROID_KHR -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/libs/glesutils/AssetUtils.cpp",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -I/home/luocj/Android/Sdk/ndk-bundle/sources/android/native_app_glue -I/home/luocj/my_works/sources/OpenGLSamples/libs/glesutils/../../include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=c++11  -Werror -D VK_USE_PLATFORM_ANDROID_KHR -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/libs/glesutils/GLESUtils.cpp",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -I/home/luocj/Android/Sdk/ndk-bundle/sources/android/native_app_glue -I/home/luocj/my_works/sources/OpenGLSamples/libs/glesutils/../../include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=c++11  -Werror -D VK_USE_PLATFORM_ANDROID_KHR -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/libs/glesutils/Shapes.cpp",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/glesutils/libglesutils.a",
+			"toolchain" : "6191103400009865258"
+		},
+		"minigzip-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "minigzip",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target minigzip",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/test/minigzip.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/zlib/minigzip",
+			"toolchain" : "6191103400009865258"
+		},
+		"minigzip64-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "minigzip64",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target minigzip64",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIE   -D_FILE_OFFSET_BITS=64    -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/test/minigzip.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/zlib/minigzip64",
+			"toolchain" : "6191103400009865258"
+		},
+		"native_activity_glue-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "native_activity_glue",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target native_activity_glue",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/Android/Sdk/ndk-bundle/sources/android/native_app_glue/android_native_app_glue.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/androidnative/libnative_activity_glue.a",
+			"toolchain" : "6191103400009865258"
+		},
+		"opengles_simples-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "opengles_simples",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target opengles_simples",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dopengles_simples_EXPORTS -I/home/luocj/Android/Sdk/ndk-bundle/sources/android/native_app_glue -I../../../../../include -I../../../../zlib/zlib-1.2.11 -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=c++11  -Werror -D VK_USE_PLATFORM_ANDROID_KHR -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/src/main/cpp/utils.cpp",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dopengles_simples_EXPORTS -I/home/luocj/Android/Sdk/ndk-bundle/sources/android/native_app_glue -I../../../../../include -I../../../../zlib/zlib-1.2.11 -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=c++11  -Werror -D VK_USE_PLATFORM_ANDROID_KHR -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/src/main/cpp/PngHandler.cpp",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Dopengles_simples_EXPORTS -I/home/luocj/Android/Sdk/ndk-bundle/sources/android/native_app_glue -I../../../../../include -I../../../../zlib/zlib-1.2.11 -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -std=c++11  -Werror -D VK_USE_PLATFORM_ANDROID_KHR -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/src/main/cpp/TextureWrap.cpp",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/build/intermediates/cmake/debug/obj/x86/libopengles_simples.so",
+			"toolchain" : "6191103400009865258"
+		},
+		"png-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "png",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target png",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dpng_EXPORTS -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/png.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dpng_EXPORTS -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngerror.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dpng_EXPORTS -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngget.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dpng_EXPORTS -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngmem.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dpng_EXPORTS -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngpread.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dpng_EXPORTS -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngread.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dpng_EXPORTS -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngrio.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dpng_EXPORTS -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngrtran.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dpng_EXPORTS -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngrutil.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dpng_EXPORTS -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngset.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dpng_EXPORTS -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngtrans.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dpng_EXPORTS -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngwio.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dpng_EXPORTS -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngwrite.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dpng_EXPORTS -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngwtran.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dpng_EXPORTS -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngwutil.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/build/intermediates/cmake/debug/obj/x86/libpng16d.so",
+			"toolchain" : "6191103400009865258"
+		},
+		"png-fix-itxt-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "png-fix-itxt",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target png-fix-itxt",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/contrib/tools/png-fix-itxt.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/png/png-fix-itxt",
+			"toolchain" : "6191103400009865258"
+		},
+		"png_static-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "png_static",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target png_static",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/png.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngerror.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngget.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngmem.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngpread.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngread.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngrio.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngrtran.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngrutil.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngset.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngtrans.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngwio.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngwrite.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngwtran.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngwutil.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/png/libpng16d.a",
+			"toolchain" : "6191103400009865258"
+		},
+		"pngfix-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "pngfix",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target pngfix",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/contrib/tools/pngfix.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/png/pngfix",
+			"toolchain" : "6191103400009865258"
+		},
+		"pngimage-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "pngimage",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target pngimage",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/contrib/libtests/pngimage.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/png/pngimage",
+			"toolchain" : "6191103400009865258"
+		},
+		"pngstest-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "pngstest",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target pngstest",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/contrib/libtests/pngstest.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/png/pngstest",
+			"toolchain" : "6191103400009865258"
+		},
+		"pngtest-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "pngtest",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target pngtest",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/pngtest.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/png/pngtest",
+			"toolchain" : "6191103400009865258"
+		},
+		"pngunknown-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "pngunknown",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target pngunknown",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/contrib/libtests/pngunknown.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/png/pngunknown",
+			"toolchain" : "6191103400009865258"
+		},
+		"pngvalid-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "pngvalid",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target pngvalid",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -Ipng -I../../../../png/libpng-1.6.37  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIE      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/contrib/libtests/pngvalid.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/png/pngvalid",
+			"toolchain" : "6191103400009865258"
+		},
+		"zlib-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "zlib",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target zlib",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/adler32.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/compress.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/crc32.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/deflate.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/gzclose.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/gzlib.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/gzread.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/gzwrite.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/inflate.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/infback.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/inftrees.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/inffast.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/trees.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/uncompr.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DZLIB_DLL -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/zutil.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/build/intermediates/cmake/debug/obj/x86/libz.so",
+			"toolchain" : "6191103400009865258"
+		},
+		"zlibstatic-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "zlibstatic",
+			"buildCommand" : "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86 --target zlibstatic",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/adler32.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/compress.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/crc32.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/deflate.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/gzclose.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/gzlib.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/gzread.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/gzwrite.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/inflate.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/infback.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/inftrees.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/inffast.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/trees.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/uncompr.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android28 --gcc-toolchain=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot -D_LARGEFILE64_SOURCE=1 -Izlib -I../../../../  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/zutil.c",
+					"workingDirectory" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86"
+				}
+			],
+			"output" : "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/debug/x86/zlib/libz.a",
+			"toolchain" : "6191103400009865258"
+		}
+	},
+	"toolchains" : 
+	{
+		"6191103400009865258" : 
+		{
+			"cCompilerExecutable" : "/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/home/luocj/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+		}
+	}
+}

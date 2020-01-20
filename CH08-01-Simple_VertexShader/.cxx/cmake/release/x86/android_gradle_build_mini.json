@@ -1,0 +1,36 @@
+{
+  "buildFiles": [
+    "/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/CMakeLists.txt",
+    "/home/luocj/my_works/sources/OpenGLSamples/libs/androidnative/CMakeLists.txt",
+    "/home/luocj/my_works/sources/OpenGLSamples/libs/glesutils/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/release/x86 --target clean"
+  ],
+  "libraries": {
+    "glesutils-Release-x86": {
+      "artifactName": "glesutils",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/release/x86 --target glesutils",
+      "abi": "x86",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/release/x86/glesutils/libglesutils.a"
+    },
+    "native_activity_glue-Release-x86": {
+      "artifactName": "native_activity_glue",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/release/x86 --target native_activity_glue",
+      "abi": "x86",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/release/x86/androidnative/libnative_activity_glue.a"
+    },
+    "androidnative-Release-x86": {
+      "artifactName": "androidnative",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/release/x86 --target androidnative",
+      "abi": "x86",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/release/x86/androidnative/libandroidnative.a"
+    },
+    "simple_vertex_shader-Release-x86": {
+      "artifactName": "simple_vertex_shader",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/.cxx/cmake/release/x86 --target simple_vertex_shader",
+      "abi": "x86",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH08-01-Simple_VertexShader/build/intermediates/cmake/release/obj/x86/libsimple_vertex_shader.so"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "/home/luocj/my_works/sources/OpenGLSamples",
+      "sdkFolder": "/home/luocj/Android/Sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/build/intermediates",
+      "gradleModulePathName": ":04_YuvTex",
+      "moduleRootFolder": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex",
+      "makeFile": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "/home/luocj/my_works/sources/OpenGLSamples/.cxx",
+      "cxxFolder": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx",
+      "ndkFolder": "/home/luocj/Android/Sdk/ndk-bundle",
+      "ndkVersion": "20.1.5948944",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [],
+    "variantName": "debug",
+    "soFolder": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/build/intermediates/cmake/debug/lib",
+    "objFolder": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/build/intermediates/cmake/debug/obj",
+    "jsonFolder": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/debug",
+    "gradleBuildOutputFolder": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cxx/debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "ARM64_V8A",
+  "abiPlatformVersion": 26,
+  "cxxBuildFolder": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/debug/arm64-v8a",
+  "jsonFile": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/debug/arm64-v8a/android_gradle_build.json",
+  "gradleBuildOutputFolder": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cxx/debug/arm64-v8a",
+  "objFolder": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/build/intermediates/cmake/debug/obj/arm64-v8a",
+  "buildCommandFile": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/debug/arm64-v8a/build_command.txt",
+  "buildOutputFile": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/debug/arm64-v8a/build_output.txt",
+  "modelOutputFile": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/debug/arm64-v8a/build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cxx/debug/arm64-v8a/CMakeLists.txt",
+    "toolchainWrapperFile": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cxx/debug/arm64-v8a/android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cxx/debug/arm64-v8a/build_generation_state.json",
+    "cacheKeyFile": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cxx/debug/arm64-v8a/compiler_cache_key.json",
+    "compilerCacheUseFile": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cxx/debug/arm64-v8a/compiler_cache_use.json",
+    "compilerCacheWriteFile": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cxx/debug/arm64-v8a/compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cxx/debug/arm64-v8a/compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/debug/arm64-v8a/json_generation_record.json",
+  "compileCommandsJsonFile": "/home/luocj/my_works/sources/OpenGLSamples/04_YuvTex/.cxx/cmake/debug/arm64-v8a/compile_commands.json"
+}

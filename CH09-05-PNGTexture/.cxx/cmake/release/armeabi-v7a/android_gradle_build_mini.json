@@ -1,0 +1,128 @@
+{
+  "buildFiles": [
+    "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/CMakeLists.txt",
+    "/home/luocj/my_works/sources/OpenGLSamples/libs/androidnative/CMakeLists.txt",
+    "/home/luocj/my_works/sources/OpenGLSamples/libs/glesutils/CMakeLists.txt",
+    "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/zlib/zlib-1.2.11/CMakeLists.txt",
+    "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/png/libpng-1.6.37/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target clean"
+  ],
+  "libraries": {
+    "pngfix-Release-armeabi-v7a": {
+      "artifactName": "pngfix",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target pngfix",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/png/pngfix"
+    },
+    "pngstest-Release-armeabi-v7a": {
+      "artifactName": "pngstest",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target pngstest",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/png/pngstest"
+    },
+    "native_activity_glue-Release-armeabi-v7a": {
+      "artifactName": "native_activity_glue",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target native_activity_glue",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/androidnative/libnative_activity_glue.a"
+    },
+    "zlibstatic-Release-armeabi-v7a": {
+      "artifactName": "zlibstatic",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target zlibstatic",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/zlib/libz.a"
+    },
+    "example-Release-armeabi-v7a": {
+      "artifactName": "example",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target example",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/zlib/example"
+    },
+    "glesutils-Release-armeabi-v7a": {
+      "artifactName": "glesutils",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target glesutils",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/glesutils/libglesutils.a"
+    },
+    "png_static-Release-armeabi-v7a": {
+      "artifactName": "png_static",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target png_static",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/png/libpng16.a"
+    },
+    "pngtest-Release-armeabi-v7a": {
+      "artifactName": "pngtest",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target pngtest",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/png/pngtest"
+    },
+    "pngvalid-Release-armeabi-v7a": {
+      "artifactName": "pngvalid",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target pngvalid",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/png/pngvalid"
+    },
+    "example64-Release-armeabi-v7a": {
+      "artifactName": "example64",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target example64",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/zlib/example64"
+    },
+    "pngunknown-Release-armeabi-v7a": {
+      "artifactName": "pngunknown",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target pngunknown",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/png/pngunknown"
+    },
+    "minigzip-Release-armeabi-v7a": {
+      "artifactName": "minigzip",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target minigzip",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/zlib/minigzip"
+    },
+    "png-fix-itxt-Release-armeabi-v7a": {
+      "artifactName": "png-fix-itxt",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target png-fix-itxt",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/png/png-fix-itxt"
+    },
+    "androidnative-Release-armeabi-v7a": {
+      "artifactName": "androidnative",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target androidnative",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/androidnative/libandroidnative.a"
+    },
+    "png-Release-armeabi-v7a": {
+      "artifactName": "png",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target png",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/build/intermediates/cmake/release/obj/armeabi-v7a/libpng16.so"
+    },
+    "zlib-Release-armeabi-v7a": {
+      "artifactName": "zlib",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target zlib",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/build/intermediates/cmake/release/obj/armeabi-v7a/libz.so"
+    },
+    "minigzip64-Release-armeabi-v7a": {
+      "artifactName": "minigzip64",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target minigzip64",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/zlib/minigzip64"
+    },
+    "opengles_simples-Release-armeabi-v7a": {
+      "artifactName": "opengles_simples",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target opengles_simples",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/build/intermediates/cmake/release/obj/armeabi-v7a/libopengles_simples.so"
+    },
+    "pngimage-Release-armeabi-v7a": {
+      "artifactName": "pngimage",
+      "buildCommand": "/home/luocj/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a --target pngimage",
+      "abi": "armeabi-v7a",
+      "output": "/home/luocj/my_works/sources/OpenGLSamples/CH09-05-PNGTexture/.cxx/cmake/release/armeabi-v7a/png/pngimage"
+    }
+  }
+}
