@@ -25,7 +25,7 @@ get_filename_component(GLMINC_PREFIX
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/zlib/zlib-1.2.11 ${CMAKE_BINARY_DIR}/zlib)
 
-# 4.build -png
+# 4.build libpng
 set(PNG_STATIC ON)
 set(PNG_SHARED OFF)
 set(PNG_TESTS OFF)
@@ -42,16 +42,17 @@ set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -u ANativeActivity_o
 
 add_library( opengles_simples
         SHARED
-        src/main/cpp/utils.cpp
-        src/main/cpp/PngHandler.cpp
-        src/main/cpp/TextureWrap.cpp
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/utils.cpp
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/PngHandler.cpp
+        ${CMAKE_SOURCE_DIR}/src/main/cpp/TextureWrap.cpp
         )
+
 # 6.include header
 target_include_directories( opengles_simples PRIVATE
         ${ANDROID_NDK}/sources/android/native_app_glue
-        ${CMAKE_CURRENT_SOURCE_DIR}/../include
-        ${CMAKE_CURRENT_SOURCE_DIR}/zlib/zlib-1.2.11
-        ${CMAKE_CURRENT_SOURCE_DIR}/png/libpng-1.6.37
+        ${CMAKE_SOURCE_DIR}/../include
+        ${CMAKE_SOURCE_DIR}/zlib/zlib-1.2.11
+        ${CMAKE_SOURCE_DIR}/png/libpng-1.6.37
         )
 # 7.link static libs
 target_link_libraries( opengles_simples

@@ -31,7 +31,7 @@ typedef struct {
 ///
 // Create a mipmapped 2D texture image
 //
-GLuint CreateTexture2D(UserData *userData, char* fileName) {
+GLuint CreateTexture2D(UserData *userData, char *fileName) {
     // Texture object handle
     GLuint textureId;
 
@@ -64,32 +64,12 @@ GLuint CreateTexture2D(UserData *userData, char* fileName) {
 //
 int Init(Engine *esContext) {
     UserData *userData = (UserData *) esContext->userData;
-    char vShaderStr[] =
-            "#version 300 es                            \n"
-            "uniform float u_offset;                    \n"
-            "layout(location = 0) in vec4 a_position;   \n"
-            "layout(location = 1) in vec2 a_texCoord;   \n"
-            "out vec2 v_texCoord;                       \n"
-            "void main()                                \n"
-            "{                                          \n"
-            "   gl_Position = a_position;               \n"
-            "   gl_Position.x += u_offset;              \n"
-            "   v_texCoord = a_texCoord;                \n"
-            "}                                          \n";
 
-    char fShaderStr[] =
-            "#version 300 es                                     \n"
-            "precision mediump float;                            \n"
-            "in vec2 v_texCoord;                                 \n"
-            "layout(location = 0) out vec4 outColor;             \n"
-            "uniform sampler2D s_texture;                        \n"
-            "void main()                                         \n"
-            "{                                                   \n"
-            "   outColor = texture(s_texture, v_texCoord);       \n"
-            "}                                                   \n";
+    char *vShaderSource = readShaderSrcFile("shaders/vertex.vert", esContext->assetManager);
+    char *fShaderSource = readShaderSrcFile("shaders/fragment.frag", esContext->assetManager);
 
     // Load the shaders and get a linked program object
-    userData->programObject = loadProgram(vShaderStr, fShaderStr);
+    userData->programObject = loadProgram(vShaderSource, fShaderSource);
 
     // Get the sampler location
     userData->samplerLoc = glGetUniformLocation(userData->programObject, "s_texture");

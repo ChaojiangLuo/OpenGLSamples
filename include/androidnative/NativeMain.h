@@ -82,6 +82,8 @@ struct Engine {
     struct OpenGLRender *render;
     FrameInfo frameInfo;
 
+    AAssetManager* assetManager;
+
     /// Callbacks
     void (*drawFunc )(Engine *);
 

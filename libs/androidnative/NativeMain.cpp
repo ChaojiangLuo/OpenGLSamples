@@ -409,6 +409,8 @@ void android_main(struct android_app *app) {
         engine.savedState = *(struct Saved_State *) app->savedState;
     }
 
+    engine.assetManager = app->activity->assetManager;
+
     struct timeval timeTemp;
     frameInfo.frameCount = 0;
     gettimeofday(&timeTemp, NULL);
