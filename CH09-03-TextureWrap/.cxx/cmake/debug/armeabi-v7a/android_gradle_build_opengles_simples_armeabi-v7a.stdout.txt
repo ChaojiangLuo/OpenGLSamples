@@ -1,9 +1,0 @@
-[1/9] Linking C static library androidnative/libnative_activity_glue.a
-[2/9] Building CXX object glesutils/CMakeFiles/glesutils.dir/AssetUtils.cpp.o
-[3/9] Building CXX object androidnative/CMakeFiles/androidnative.dir/MyLog.cpp.o
-[4/9] Building CXX object androidnative/CMakeFiles/androidnative.dir/NativeMain.cpp.o
-[5/9] Building CXX object androidnative/CMakeFiles/androidnative.dir/ShaderLoader.cpp.o
-[6/9] Linking CXX static library glesutils/libglesutils.a
-[7/9] Linking CXX static library androidnative/libandroidnative.a
-[8/9] Building CXX object CMakeFiles/opengles_simples.dir/src/main/cpp/TextureWrap.cpp.o
-[9/9] Linking CXX shared library ../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libopengles_simples.so

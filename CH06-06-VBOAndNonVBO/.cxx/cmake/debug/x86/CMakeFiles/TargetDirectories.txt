@@ -1,7 +1,0 @@
-/home/luocj/my_works/sources/OpenGLSamples/CH06-06-VBOAndNonVBO/.cxx/cmake/debug/x86/CMakeFiles/edit_cache.dir
-/home/luocj/my_works/sources/OpenGLSamples/CH06-06-VBOAndNonVBO/.cxx/cmake/debug/x86/CMakeFiles/rebuild_cache.dir
-/home/luocj/my_works/sources/OpenGLSamples/CH06-06-VBOAndNonVBO/.cxx/cmake/debug/x86/CMakeFiles/vbo_and_nonvbo.dir
-/home/luocj/my_works/sources/OpenGLSamples/CH06-06-VBOAndNonVBO/.cxx/cmake/debug/x86/androidnative/CMakeFiles/edit_cache.dir
-/home/luocj/my_works/sources/OpenGLSamples/CH06-06-VBOAndNonVBO/.cxx/cmake/debug/x86/androidnative/CMakeFiles/rebuild_cache.dir
-/home/luocj/my_works/sources/OpenGLSamples/CH06-06-VBOAndNonVBO/.cxx/cmake/debug/x86/androidnative/CMakeFiles/native_activity_glue.dir
-/home/luocj/my_works/sources/OpenGLSamples/CH06-06-VBOAndNonVBO/.cxx/cmake/debug/x86/androidnative/CMakeFiles/androidnative.dir

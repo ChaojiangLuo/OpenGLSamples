@@ -8,12 +8,12 @@
 #include "utils.h"
 #include "PngHandler.h"
 
-void GetPNGtextureInfo(int color_type,  gl_texture_t *texinfo) {
-    switch (color_type ) {
+void GetPNGtextureInfo(int color_type, gl_texture_t *texinfo) {
+    switch (color_type) {
         case PNG_COLOR_TYPE_GRAY:
-        texinfo->format = GL_LUMINANCE;
-        texinfo->internalFormat = 1;
-        break;
+            texinfo->format = GL_LUMINANCE;
+            texinfo->internalFormat = 1;
+            break;
 
         case PNG_COLOR_TYPE_GRAY_ALPHA:
             texinfo->format = GL_LUMINANCE_ALPHA;
@@ -36,8 +36,8 @@ void GetPNGtextureInfo(int color_type,  gl_texture_t *texinfo) {
     }
 }
 
-gl_texture_t* readPngFile(char *name) {
-    ALOGE("readPngFile %s\n",  name);
+gl_texture_t *readPngFile(char *name) {
+    ALOGE("readPngFile %s\n", name);
     // 前边几句是扯淡，初始化各种结构
     FILE *file = fopen(name, "rb");
 
@@ -66,20 +66,22 @@ gl_texture_t* readPngFile(char *name) {
 
     GetPNGtextureInfo(color_type, texinfo);
 
-    ALOGE("xm-gfx-opengl: texinfo size %dx%d internalFormat=%d format=%d", texinfo->width, texinfo->height, texinfo->internalFormat, texinfo->format);
+    ALOGE("xm-gfx-opengl: texinfo size %dx%d internalFormat=%d format=%d", texinfo->width,
+          texinfo->height, texinfo->internalFormat, texinfo->format);
 
-    texinfo->texels = (GLubyte *) malloc(sizeof(GLubyte) * texinfo->width * texinfo->height * texinfo->internalFormat);
+    texinfo->pixels = (GLubyte *) malloc(
+            sizeof(GLubyte) * texinfo->width * texinfo->height * texinfo->internalFormat);
     /* Setup a pointer array. Each one points at the begening of a row. */
     png_bytep *row_pointers = png_get_rows(png_ptr, info_ptr);
 
     int pos = 0;
     for (int i = 0; i < m_height; i++) {
         for (int j = 0; j < (texinfo->internalFormat * m_width); j += texinfo->internalFormat) {
-            char log[20]={0};
-            char logt[5]={0};
-            for(int index = 0; index < texinfo->internalFormat; index++) {
-                texinfo->texels[pos] = row_pointers[i][j + index];   // r g b a
-                sprintf(logt, "%02x ", texinfo->texels[pos]);
+            char log[20] = {0};
+            char logt[5] = {0};
+            for (int index = 0; index < texinfo->internalFormat; index++) {
+                texinfo->pixels[pos] = row_pointers[i][j + index];   // r g b a
+                sprintf(logt, "%02x ", texinfo->pixels[pos]);
                 strcat(log, logt);
                 pos++;
             }
@@ -95,9 +97,8 @@ gl_texture_t* readPngFile(char *name) {
     return texinfo;
 }
 
-void writePngFile(char *fileName, png_byte* src , int width, int height, int format)
-{
-    if(format != PNG_COLOR_TYPE_RGBA) {
+void writePngFile(char *fileName, png_byte *src, int width, int height, int format) {
+    if (format != PNG_COLOR_TYPE_RGBA) {
         ALOGE("We just support RGBA format now~");
         return;
     }
@@ -108,29 +109,26 @@ void writePngFile(char *fileName, png_byte* src , int width, int height, int for
 
     FILE *fp = fopen(fileName, "wb");
     if (fp == NULL)
-        return ;
+        return;
 
     png_ptr = png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
-    if (png_ptr == NULL)
-    {
+    if (png_ptr == NULL) {
         fclose(fp);
-        return ;
+        return;
     }
 
     /* Allocate/initialize the image information data.  REQUIRED */
     info_ptr = png_create_info_struct(png_ptr);
-    if (info_ptr == NULL)
-    {
+    if (info_ptr == NULL) {
         fclose(fp);
-        png_destroy_write_struct(&png_ptr,  NULL);
-        return ;
+        png_destroy_write_struct(&png_ptr, NULL);
+        return;
     }
-    if (setjmp(png_jmpbuf(png_ptr)))
-    {
+    if (setjmp(png_jmpbuf(png_ptr))) {
         /* If we get here, we had a problem writing the file */
         fclose(fp);
         png_destroy_write_struct(&png_ptr, &info_ptr);
-        return ;
+        return;
     }
 
     /* 接下来告诉 libpng 用 fwrite 来写入 PNG 文件，并传给它已按二进制方式打开的 FILE* fp */
@@ -144,7 +142,7 @@ void writePngFile(char *fileName, png_byte* src , int width, int height, int for
                  PNG_FILTER_TYPE_BASE);
 
     /* 分配调色板空间。常数 PNG_MAX_PALETTE_LENGTH 的值是256 */
-    palette = (png_colorp)png_malloc(png_ptr, PNG_MAX_PALETTE_LENGTH * sizeof(png_color));
+    palette = (png_colorp) png_malloc(png_ptr, PNG_MAX_PALETTE_LENGTH * sizeof(png_color));
 
     png_set_PLTE(png_ptr, info_ptr, palette, PNG_MAX_PALETTE_LENGTH);
 
@@ -161,11 +159,11 @@ void writePngFile(char *fileName, png_byte* src , int width, int height, int for
 
     image = src;
 
-    if (height > PNG_UINT_32_MAX/sizeof(png_bytep))
-        png_error (png_ptr, "Image is too tall to process in memory");
+    if (height > PNG_UINT_32_MAX / sizeof(png_bytep))
+        png_error(png_ptr, "Image is too tall to process in memory");
 
     for (k = 0; k < height; k++)
-        row_pointers[k] = image + k*width*4;
+        row_pointers[k] = image + k * width * 4;
 
     /* One of the following output methods is REQUIRED */
     png_write_image(png_ptr, row_pointers);
@@ -177,7 +175,7 @@ void writePngFile(char *fileName, png_byte* src , int width, int height, int for
 
     fclose(fp);
     ALOGE("success write png file %s\n", fileName);
-    return ;
+    return;
 }
 
 void buildPngFile(char *fileName) {
@@ -185,11 +183,13 @@ void buildPngFile(char *fileName) {
     int height = 2;
 
     png_byte src[] = {
-            0x00, 0x00, 0x00, 0xff, 0xff, 0x00, 0x00, 0xff, 0x00, 0x00, 0xff, 0xff, 0x00, 0xff, 0x00, 0xff,
-            0xff, 0xff, 0xff, 0x7f, 0x00, 0xff, 0x00, 0x7f, 0xff, 0x00, 0x00, 0x7f, 0x00, 0x00, 0xff, 0x7f
+            0x00, 0x00, 0x00, 0xff, 0xff, 0x00, 0x00, 0xff, 0x00, 0x00, 0xff, 0xff, 0x00, 0xff,
+            0x00, 0xff,
+            0xff, 0xff, 0xff, 0x7f, 0x00, 0xff, 0x00, 0x7f, 0xff, 0x00, 0x00, 0x7f, 0x00, 0x00,
+            0xff, 0x7f
     };
 
-    writePngFile(fileName,src,width, height, PNG_COLOR_TYPE_RGBA);
+    writePngFile(fileName, src, width, height, PNG_COLOR_TYPE_RGBA);
 
     readPngFile(fileName);
 }

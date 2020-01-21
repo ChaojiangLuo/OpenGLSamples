@@ -1,2 +1,0 @@
-[1/2] Building CXX object CMakeFiles/opengles_simples.dir/src/main/cpp/TextureWrap.cpp.o
-[2/2] Linking CXX shared library ../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libopengles_simples.so

@@ -7,21 +7,20 @@
 
 #include <png.h>
 
-class gl_texture_t{
-public:
+struct gl_texture_t {
     GLsizei width;
     GLsizei height;
     GLenum format;
     GLint internalFormat;
     GLuint id;
-    GLubyte *texels;
+    GLubyte *pixels;
 };
 
-gl_texture_t* readPngFile(char *name);
+gl_texture_t *readPngFile(char *name);
 
-void GetPNGtextureInfo(int color_type,  gl_texture_t *texinfo);
+void GetPNGtextureInfo(int color_type, gl_texture_t *texinfo);
 
-void writePngFile(char *fileName, png_byte* src , int width, int height, int format);
+void writePngFile(char *fileName, png_byte *src, int width, int height, int format);
 
 void buildPngFile(char *fileName);
 

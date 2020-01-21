@@ -1,7 +1,0 @@
-/home/luocj/my_works/sources/OpenGLSamples/CH06-08-MapBuffers/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
-/home/luocj/my_works/sources/OpenGLSamples/CH06-08-MapBuffers/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir
-/home/luocj/my_works/sources/OpenGLSamples/CH06-08-MapBuffers/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/map_buffers.dir
-/home/luocj/my_works/sources/OpenGLSamples/CH06-08-MapBuffers/.cxx/cmake/debug/armeabi-v7a/androidnative/CMakeFiles/edit_cache.dir
-/home/luocj/my_works/sources/OpenGLSamples/CH06-08-MapBuffers/.cxx/cmake/debug/armeabi-v7a/androidnative/CMakeFiles/rebuild_cache.dir
-/home/luocj/my_works/sources/OpenGLSamples/CH06-08-MapBuffers/.cxx/cmake/debug/armeabi-v7a/androidnative/CMakeFiles/native_activity_glue.dir
-/home/luocj/my_works/sources/OpenGLSamples/CH06-08-MapBuffers/.cxx/cmake/debug/armeabi-v7a/androidnative/CMakeFiles/androidnative.dir

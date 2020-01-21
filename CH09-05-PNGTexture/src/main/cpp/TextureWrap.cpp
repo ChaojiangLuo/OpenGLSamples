@@ -23,29 +23,19 @@ typedef struct {
     // Texture handle
     GLuint textureId;
 
-    gl_texture_t* texture;
+    gl_texture_t *texture;
 
 } UserData;
 
 
 ///
-//  Generate an RGB8 checkerboard image
-//
-void GenCheckImage(UserData *userData) {
-    char fileName[512] = {0};
-    sprintf(fileName, "/sdcard/png/%s", "png_4_2_32bit.png");
-
-    userData->texture = readPngFile(fileName);
-}
-
-///
 // Create a mipmapped 2D texture image
 //
-GLuint CreateTexture2D(UserData *userData) {
+GLuint CreateTexture2D(UserData *userData, char* fileName) {
     // Texture object handle
     GLuint textureId;
 
-    GenCheckImage(userData);
+    userData->texture = readPngFile(fileName);
 
     // Generate a texture object
     glGenTextures(1, &textureId);
@@ -54,18 +44,18 @@ GLuint CreateTexture2D(UserData *userData) {
     glBindTexture(GL_TEXTURE_2D, textureId);
 
     // Load mipmap level 0
-    glTexImage2D(GL_TEXTURE_2D, 0, userData->texture->format, userData->texture->width, userData->texture->height,
-                 0, userData->texture->format, GL_UNSIGNED_BYTE, userData->texture->texels);
+    glTexImage2D(GL_TEXTURE_2D, 0, userData->texture->format, userData->texture->width,
+                 userData->texture->height,
+                 0, userData->texture->format, GL_UNSIGNED_BYTE, userData->texture->pixels);
 
     // Set the filtering mode
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-    free(userData->texture->texels);
+    free(userData->texture->pixels);
     free(userData->texture);
 
     return textureId;
-
 }
 
 
@@ -76,27 +66,27 @@ int Init(Engine *esContext) {
     UserData *userData = (UserData *) esContext->userData;
     char vShaderStr[] =
             "#version 300 es                            \n"
-                    "uniform float u_offset;                    \n"
-                    "layout(location = 0) in vec4 a_position;   \n"
-                    "layout(location = 1) in vec2 a_texCoord;   \n"
-                    "out vec2 v_texCoord;                       \n"
-                    "void main()                                \n"
-                    "{                                          \n"
-                    "   gl_Position = a_position;               \n"
-                    "   gl_Position.x += u_offset;              \n"
-                    "   v_texCoord = a_texCoord;                \n"
-                    "}                                          \n";
+            "uniform float u_offset;                    \n"
+            "layout(location = 0) in vec4 a_position;   \n"
+            "layout(location = 1) in vec2 a_texCoord;   \n"
+            "out vec2 v_texCoord;                       \n"
+            "void main()                                \n"
+            "{                                          \n"
+            "   gl_Position = a_position;               \n"
+            "   gl_Position.x += u_offset;              \n"
+            "   v_texCoord = a_texCoord;                \n"
+            "}                                          \n";
 
     char fShaderStr[] =
             "#version 300 es                                     \n"
-                    "precision mediump float;                            \n"
-                    "in vec2 v_texCoord;                                 \n"
-                    "layout(location = 0) out vec4 outColor;             \n"
-                    "uniform sampler2D s_texture;                        \n"
-                    "void main()                                         \n"
-                    "{                                                   \n"
-                    "   outColor = texture( s_texture, v_texCoord );     \n"
-                    "}                                                   \n";
+            "precision mediump float;                            \n"
+            "in vec2 v_texCoord;                                 \n"
+            "layout(location = 0) out vec4 outColor;             \n"
+            "uniform sampler2D s_texture;                        \n"
+            "void main()                                         \n"
+            "{                                                   \n"
+            "   outColor = texture(s_texture, v_texCoord);       \n"
+            "}                                                   \n";
 
     // Load the shaders and get a linked program object
     userData->programObject = loadProgram(vShaderStr, fShaderStr);
@@ -107,8 +97,11 @@ int Init(Engine *esContext) {
     // Get the offset location
     userData->offsetLoc = glGetUniformLocation(userData->programObject, "u_offset");
 
+    char fileName[512] = {0};
+    sprintf(fileName, "/sdcard/png/%s", "png_4_2_32bit.png");
+
     // Load the texture
-    userData->textureId = CreateTexture2D(userData);
+    userData->textureId = CreateTexture2D(userData, fileName);
 
     glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
     return GL_TRUE;
@@ -194,30 +187,28 @@ void ShutDown(Engine *esContext) {
 #define BITS_PER_LONG __WORDSIZE
 #endif
 
-#define BIT_MASK(nr)		(1UL << ((nr) % BITS_PER_LONG))
-#define BIT_WORD(nr)		((nr) / BITS_PER_LONG)
+#define BIT_MASK(nr)        (1UL << ((nr) % BITS_PER_LONG))
+#define BIT_WORD(nr)        ((nr) / BITS_PER_LONG)
 
-static __always_inline int test_bit(unsigned int nr, const unsigned long *addr)
-{
+static __always_inline int test_bit(unsigned int nr, const unsigned long *addr) {
     return ((1UL << (nr % __BITS_PER_LONG)) &
-            (((unsigned long *)addr)[nr / __BITS_PER_LONG])) != 0;
+            (((unsigned long *) addr)[nr / __BITS_PER_LONG])) != 0;
 }
 
-static inline void __change_bit(int nr, volatile void *addr)
-{
-	unsigned long mask = BIT_MASK(nr);
-	unsigned long *p = ((unsigned long *)addr) + BIT_WORD(nr);
+static inline void __change_bit(int nr, volatile void *addr) {
+    unsigned long mask = BIT_MASK(nr);
+    unsigned long *p = ((unsigned long *) addr) + BIT_WORD(nr);
 
-	*p ^= mask;
+    *p ^= mask;
 }
 
-#define KEY_MAX			0x2ff
-#define KEY_CNT			(KEY_MAX+1)
+#define KEY_MAX            0x2ff
+#define KEY_CNT            (KEY_MAX+1)
 
-#define __KERNEL_DIV_ROUND_UP(n,d) (((n) + (d) - 1) / (d))
+#define __KERNEL_DIV_ROUND_UP(n, d) (((n) + (d) - 1) / (d))
 #define DIV_ROUND_UP __KERNEL_DIV_ROUND_UP
-#define BITS_PER_BYTE		8
-#define BITS_TO_LONGS(nr)	DIV_ROUND_UP(nr, BITS_PER_BYTE * sizeof(long))
+#define BITS_PER_BYTE        8
+#define BITS_TO_LONGS(nr)    DIV_ROUND_UP(nr, BITS_PER_BYTE * sizeof(long))
 
 struct input_dev {
     unsigned long key[BITS_TO_LONGS(KEY_CNT)];
@@ -250,7 +241,7 @@ int appMain(Engine *esContext) {
 
     unsigned int code = 338;
 
-    input_dev* dev = new input_dev;
+    input_dev *dev = new input_dev;
 
     int value = 1;
 
@@ -258,15 +249,17 @@ int appMain(Engine *esContext) {
 
     int disposition = 0;
 
-    ((unsigned long *)dev->key)[code / __BITS_PER_LONG] = 262144;
+    ((unsigned long *) dev->key)[code / __BITS_PER_LONG] = 262144;
 
     if (!!test_bit(code, dev->key) != !!value) {
-        ALOGE("xm-gfx:appMain debug=%d value=%lu\n", disposition, (((unsigned long *)dev->key)[code / __BITS_PER_LONG]));
+        ALOGE("xm-gfx:appMain debug=%d value=%lu\n", disposition,
+              (((unsigned long *) dev->key)[code / __BITS_PER_LONG]));
         __change_bit(code, dev->key);
         disposition = 1;
     }
 
-    ALOGE("xm-gfx:appMain disposition=%d value=%lu size=%zu\n", disposition, (((unsigned long *)dev->key)[code / __BITS_PER_LONG]), sizeof(dev->key));
+    ALOGE("xm-gfx:appMain disposition=%d value=%lu size=%zu\n", disposition,
+          (((unsigned long *) dev->key)[code / __BITS_PER_LONG]), sizeof(dev->key));
 
     return GL_TRUE;
 }

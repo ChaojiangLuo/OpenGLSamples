@@ -1,4 +1,0 @@
-/home/luocj/my_works/sources/OpenGLSamples/02-VaoVbo/.cxx/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir
-/home/luocj/my_works/sources/OpenGLSamples/02-VaoVbo/.cxx/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
-/home/luocj/my_works/sources/OpenGLSamples/02-VaoVbo/.cxx/cmake/release/armeabi-v7a/CMakeFiles/native_gl2_vao_vbo.dir
-/home/luocj/my_works/sources/OpenGLSamples/02-VaoVbo/.cxx/cmake/release/armeabi-v7a/CMakeFiles/native_activity_glue.dir

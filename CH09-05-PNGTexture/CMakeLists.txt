@@ -46,14 +46,14 @@ add_library( opengles_simples
         src/main/cpp/PngHandler.cpp
         src/main/cpp/TextureWrap.cpp
         )
-
+# 6.include header
 target_include_directories( opengles_simples PRIVATE
         ${ANDROID_NDK}/sources/android/native_app_glue
         ${CMAKE_CURRENT_SOURCE_DIR}/../include
         ${CMAKE_CURRENT_SOURCE_DIR}/zlib/zlib-1.2.11
         ${CMAKE_CURRENT_SOURCE_DIR}/png/libpng-1.6.37
         )
-
+# 7.link static libs
 target_link_libraries( opengles_simples
         EGL
         GLESv3
