@@ -23,6 +23,11 @@ typedef struct {
     // Texture handle
     GLuint textureId;
 
+    GLboolean blur;
+
+    float texelWidthOffset;
+    float texelHeightOffset;
+
     gl_texture_t *texture;
 
 } UserData;
@@ -52,9 +57,6 @@ GLuint CreateTexture2D(UserData *userData, char *fileName) {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-    free(userData->texture->pixels);
-    free(userData->texture);
-
     return textureId;
 }
 
@@ -76,6 +78,12 @@ int Init(Engine *esContext) {
 
     // Get the offset location
     userData->offsetLoc = glGetUniformLocation(userData->programObject, "u_offset");
+
+    userData->blur = glGetUniformLocation(userData->programObject, "blur");
+
+    userData->texelWidthOffset = glGetUniformLocation(userData->programObject, "texelWidthOffset");
+
+    userData->texelHeightOffset = glGetUniformLocation(userData->programObject, "texelHeightOffset");
 
     char fileName[512] = {0};
     sprintf(fileName, "/sdcard/png/%s", "png_4_2_32bit.png");
@@ -129,18 +137,23 @@ void Draw(Engine *esContext) {
     // Set the sampler texture unit to 0
     glUniform1i(userData->samplerLoc, 0);
 
+    glUniform1i(userData->blur, 0);
     // Draw quad with repeat wrap mode
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glUniform1f(userData->offsetLoc, -0.7f);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
 
+    glUniform1i(userData->blur, 1);
+    glUniform1f(userData->texelWidthOffset, 1.0f / userData->texture->width);
+    glUniform1f(userData->texelHeightOffset, 1.0f / userData->texture->height);
     // Draw quad with clamp to edge wrap mode
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     glUniform1f(userData->offsetLoc, 0.0f);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
 
+    glUniform1i(userData->blur, 0);
     // Draw quad with mirrored repeat
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
@@ -153,6 +166,9 @@ void Draw(Engine *esContext) {
 //
 void ShutDown(Engine *esContext) {
     UserData *userData = (UserData *) esContext->userData;
+
+    free(userData->texture->pixels);
+    free(userData->texture);
 
     // Delete texture object
     glDeleteTextures(1, &userData->textureId);
