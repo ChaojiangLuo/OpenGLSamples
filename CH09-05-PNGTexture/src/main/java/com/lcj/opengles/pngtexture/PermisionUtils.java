@@ -13,7 +13,9 @@ import androidx.core.app.ActivityCompat;
 public class PermisionUtils {
     // Storage Permissions
     public static final int REQUEST_EXTERNAL_STORAGE = 1;
-    public static String[] PERMISSIONS_STORAGE = {Manifest.permission.READ_EXTERNAL_STORAGE};
+    public static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
     /**
      * Checks if the app has permission to write to device storage

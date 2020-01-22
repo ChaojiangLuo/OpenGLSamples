@@ -85,7 +85,7 @@ gl_texture_t *readPngFile(char *name) {
                 strcat(log, logt);
                 pos++;
             }
-            ALOGE("xm-gfx-opengl: %s", log);
+            //ALOGE("xm-gfx-opengl: %s", log);
         }
     }
 

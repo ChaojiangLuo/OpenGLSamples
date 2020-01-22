@@ -20,7 +20,7 @@ public class StartingActivity extends Activity {
 
         if (ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            PermisionUtils.verifyStoragePermissions(this);
+            PermisionUtils.verifyStoragePermissions(StartingActivity.this);
         } else {
             startNativeActivity();
         }
@@ -30,7 +30,6 @@ public class StartingActivity extends Activity {
         Intent intent = new Intent();
         intent.setAction("android.intent.action.MAIN_NATIVE");
         startActivity(intent);
-        stopStartingActivity();
     }
 
     private void stopStartingActivity() {
@@ -45,8 +44,8 @@ public class StartingActivity extends Activity {
                     startNativeActivity();
                 } else {
                     Toast.makeText(this, "You have no permission to read sdcard", Toast.LENGTH_SHORT).show();
-                    stopStartingActivity();
                 }
+                stopStartingActivity();
                 break;
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);

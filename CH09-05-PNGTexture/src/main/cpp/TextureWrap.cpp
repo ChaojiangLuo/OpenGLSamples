@@ -100,14 +100,14 @@ int Init(Engine *esContext) {
 //
 void Draw(Engine *esContext) {
     UserData *userData = (UserData *) esContext->userData;
-    GLfloat vVertices[] = {-0.3f, 0.3f, 0.0f, 1.0f,  // Position 0
+    GLfloat vVertices[] = {-0.3f, 0.3f, 0.0f, 1.0f,   // Position 0
                            -1.0f, -1.0f,              // TexCoord 0
-                           -0.3f, -0.3f, 0.0f, 1.0f, // Position 1
-                           -1.0f, 2.0f,              // TexCoord 1
-                           0.3f, -0.3f, 0.0f, 1.0f, // Position 2
-                           2.0f, 2.0f,              // TexCoord 2
-                           0.3f, 0.3f, 0.0f, 1.0f,  // Position 3
-                           2.0f, -1.0f               // TexCoord 3
+                           -0.3f, -0.3f, 0.0f, 1.0f,  // Position 1
+                           -1.0f, 2.0f,               // TexCoord 1
+                           0.3f, -0.3f, 0.0f, 1.0f,   // Position 2
+                           2.0f, 2.0f,                // TexCoord 2
+                           0.3f, 0.3f, 0.0f, 1.0f,    // Position 3
+                           2.0f, -1.0f                // TexCoord 3
     };
     GLushort indices[] = {0, 1, 2, 0, 2, 3};
 
@@ -138,10 +138,17 @@ void Draw(Engine *esContext) {
     glUniform1i(userData->samplerLoc, 0);
 
     glUniform1i(userData->blur, 0);
+    // Draw quad with clamp to border wrap mode
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+    glUniform1f(userData->offsetLoc, -0.75f);
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
+
+    glUniform1i(userData->blur, 0);
     // Draw quad with repeat wrap mode
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glUniform1f(userData->offsetLoc, -0.7f);
+    glUniform1f(userData->offsetLoc, -0.25f);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
 
     glUniform1i(userData->blur, 1);
@@ -150,14 +157,14 @@ void Draw(Engine *esContext) {
     // Draw quad with clamp to edge wrap mode
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    glUniform1f(userData->offsetLoc, 0.0f);
+    glUniform1f(userData->offsetLoc, 0.25f);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
 
     glUniform1i(userData->blur, 0);
     // Draw quad with mirrored repeat
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
-    glUniform1f(userData->offsetLoc, 0.7f);
+    glUniform1f(userData->offsetLoc, 0.75f);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
 }
 

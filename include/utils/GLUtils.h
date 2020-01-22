@@ -10,6 +10,7 @@
 #endif
 
 #include <GLES3/gl3.h>
+#include <GLES3/gl32.h>
 #include <GLES/gl.h>
 
 #include <androidnative/MyLog.h>
