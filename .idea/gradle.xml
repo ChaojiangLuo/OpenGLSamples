@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <compositeConfiguration>
-          <compositeBuild compositeDefinitionSource="SCRIPT" />
-        </compositeConfiguration>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/02-VaoVbo" />
             <option value="$PROJECT_DIR$/03-Texture" />
             <option value="$PROJECT_DIR$/04_YuvTex" />
+            <option value="$PROJECT_DIR$/05_PBufferDemo" />
             <option value="$PROJECT_DIR$/CH01-01-Hello_Triangle" />
             <option value="$PROJECT_DIR$/CH06-06-VBOAndNonVBO" />
             <option value="$PROJECT_DIR$/CH06-07-VertexArrayObjects" />
@@ -24,13 +25,13 @@
             <option value="$PROJECT_DIR$/CH09-02-MipMap2D" />
             <option value="$PROJECT_DIR$/CH09-03-TextureWrap" />
             <option value="$PROJECT_DIR$/CH09-04-Simple_TextureCubemap" />
+            <option value="$PROJECT_DIR$/CH09-05-PNGTexture" />
             <option value="$PROJECT_DIR$/CH10-01-MultiTexture" />
             <option value="$PROJECT_DIR$/CH11_01_MRTs" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
-        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>
