@@ -64,7 +64,7 @@ void Draw(Engine *esContext) {
     // Set the viewport
     glViewport(0, 0, esContext->width, esContext->height);
 
-    glClearColor(1.0f, 0, 1.0f, 1.0f);
+    glClearColor(0.0f, 0, 1.0f, 1.0f);
 
     // Clear the color buffer
     glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
@@ -79,21 +79,19 @@ void Draw(Engine *esContext) {
 
     glEnableVertexAttribArray(0);
 
-    glUniform4f(userData->uuColor, 0.0f, 1.0f, 1.0f, 1.0f);
+    glUniform4f(userData->uuColor, 0.0f, 1.0f, 0.0f, 1.0f);
 
     glDrawArrays(GL_TRIANGLES, 0, 3);
 
-    eglSwapBuffers(esContext->display, esContext->surface);
-
     // 2. DrawTexture
-    GLfloat tVertices[] = {0.0f, 0.5f, 0.0f, 1.0f,   // Position 0
-                           -1.0f, -1.0f,              // TexCoord 0
-                           0.0f, -0.5f, 0.0f, 1.0f,  // Position 1
-                           -1.0f, 2.0f,               // TexCoord 1
+    GLfloat tVertices[] = {0.0f, 0.5f, 0.0f, 1.0f,    // Position 0
+                           2.0f, 2.0f,                // TexCoord 0
+                           0.0f, -0.5f, 0.0f, 1.0f,   // Position 1
+                           2.0f, -1.0f,               // TexCoord 1
                            1.0f, -0.5f, 0.0f, 1.0f,   // Position 2
-                           2.0f, 2.0f,                // TexCoord 2
+                           -1.0f, -1.0f,              // TexCoord 2
                            1.0f, 0.5f, 0.0f, 1.0f,    // Position 3
-                           2.0f, -1.0f                // TexCoord 3
+                           -1.0f, 2.0f                // TexCoord 3
     };
     GLushort indices[] = {0, 1, 2, 0, 2, 3};
 
@@ -121,8 +119,6 @@ void Draw(Engine *esContext) {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
-
-    eglSwapBuffers(esContext->display, esContext->surface);
 }
 
 ///
