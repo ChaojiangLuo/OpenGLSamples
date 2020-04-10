@@ -83,7 +83,8 @@ int Init(Engine *esContext) {
 
     userData->texelWidthOffset = glGetUniformLocation(userData->programObject, "texelWidthOffset");
 
-    userData->texelHeightOffset = glGetUniformLocation(userData->programObject, "texelHeightOffset");
+    userData->texelHeightOffset = glGetUniformLocation(userData->programObject,
+                                                       "texelHeightOffset");
 
     char fileName[512] = {0};
     sprintf(fileName, "/sdcard/png/%s", "png_4_2_32bit.png");
@@ -184,39 +185,6 @@ void ShutDown(Engine *esContext) {
     glDeleteProgram(userData->programObject);
 }
 
-#ifdef __SIZEOF_LONG__
-#define BITS_PER_LONG (__CHAR_BIT__ * __SIZEOF_LONG__)
-#else
-#define BITS_PER_LONG __WORDSIZE
-#endif
-
-#define BIT_MASK(nr)        (1UL << ((nr) % BITS_PER_LONG))
-#define BIT_WORD(nr)        ((nr) / BITS_PER_LONG)
-
-static __always_inline int test_bit(unsigned int nr, const unsigned long *addr) {
-    return ((1UL << (nr % __BITS_PER_LONG)) &
-            (((unsigned long *) addr)[nr / __BITS_PER_LONG])) != 0;
-}
-
-static inline void __change_bit(int nr, volatile void *addr) {
-    unsigned long mask = BIT_MASK(nr);
-    unsigned long *p = ((unsigned long *) addr) + BIT_WORD(nr);
-
-    *p ^= mask;
-}
-
-#define KEY_MAX            0x2ff
-#define KEY_CNT            (KEY_MAX+1)
-
-#define __KERNEL_DIV_ROUND_UP(n, d) (((n) + (d) - 1) / (d))
-#define DIV_ROUND_UP __KERNEL_DIV_ROUND_UP
-#define BITS_PER_BYTE        8
-#define BITS_TO_LONGS(nr)    DIV_ROUND_UP(nr, BITS_PER_BYTE * sizeof(long))
-
-struct input_dev {
-    unsigned long key[BITS_TO_LONGS(KEY_CNT)];
-};
-
 int appMain(Engine *esContext) {
     esContext->userData = malloc(sizeof(UserData));
 
@@ -226,43 +194,6 @@ int appMain(Engine *esContext) {
 
     registerDrawFunc(esContext, Draw);
     registerShutdownFunc(esContext, ShutDown);
-
-    bool debug = true;
-
-    if (debug) {
-        ALOGE("xm-gfx:appMain debug=%d\n", debug);
-        if (debug) {
-        }
-    }
-
-    uint32_t z = 12;
-
-    uint32_t fod = (z & 0xFF000000) >> 24;
-    z &= 0x00FFFFFF;
-
-    ALOGE("xm-gfx:appMain fod=%d z=%d\n", fod, z);
-
-    unsigned int code = 338;
-
-    input_dev *dev = new input_dev;
-
-    int value = 1;
-
-    memset(dev->key, 0, sizeof(dev->key));
-
-    int disposition = 0;
-
-    ((unsigned long *) dev->key)[code / __BITS_PER_LONG] = 262144;
-
-    if (!!test_bit(code, dev->key) != !!value) {
-        ALOGE("xm-gfx:appMain debug=%d value=%lu\n", disposition,
-              (((unsigned long *) dev->key)[code / __BITS_PER_LONG]));
-        __change_bit(code, dev->key);
-        disposition = 1;
-    }
-
-    ALOGE("xm-gfx:appMain disposition=%d value=%lu size=%zu\n", disposition,
-          (((unsigned long *) dev->key)[code / __BITS_PER_LONG]), sizeof(dev->key));
 
     return GL_TRUE;
 }

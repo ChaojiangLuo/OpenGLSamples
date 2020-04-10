@@ -69,6 +69,7 @@ struct Engine {
     ASensorEventQueue *sensorEventQueue;
 
     EGLint samples;
+    EGLConfig config;
     EGLDisplay display;
     EGLSurface surface;
     EGLContext context;
