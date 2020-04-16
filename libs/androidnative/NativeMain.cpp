@@ -188,6 +188,8 @@ static int32_t engine_handle_input(struct android_app *app, AInputEvent *event) 
 
         switch (AMotionEvent_getAction(event)) {
             case AMOTION_EVENT_ACTION_DOWN:
+                engine->downx = AMotionEvent_getX(event, 0);
+                engine->downy = AMotionEvent_getY(event, 0);
                 break;
 
             case AMOTION_EVENT_ACTION_UP:
@@ -196,6 +198,12 @@ static int32_t engine_handle_input(struct android_app *app, AInputEvent *event) 
                 } else {
                     engine->render->isAlive = 1;
                 }
+                engine->upx = AMotionEvent_getX(event, 0);
+                engine->upy = AMotionEvent_getY(event, 0);
+                break;
+            case AMOTION_EVENT_ACTION_MOVE:
+                engine->px = AMotionEvent_getX(event, 0);
+                engine->py = AMotionEvent_getY(event, 0);
                 break;
         }
 

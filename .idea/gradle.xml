@@ -4,7 +4,6 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="delegatedBuild" value="false" />
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -17,6 +16,8 @@
             <option value="$PROJECT_DIR$/04_YuvTex" />
             <option value="$PROJECT_DIR$/05_PBufferDemo" />
             <option value="$PROJECT_DIR$/06_PBufferCDemo" />
+            <option value="$PROJECT_DIR$/07_Simple_Noise" />
+            <option value="$PROJECT_DIR$/08_Random_Noise" />
             <option value="$PROJECT_DIR$/CH01-01-Hello_Triangle" />
             <option value="$PROJECT_DIR$/CH06-06-VBOAndNonVBO" />
             <option value="$PROJECT_DIR$/CH06-07-VertexArrayObjects" />

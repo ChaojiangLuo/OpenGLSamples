@@ -3,6 +3,8 @@
 //
 #include<stdio.h>
 
+#include <androidnative/NativeMain.h>
+
 #include "utils.h"
 
 int myHex2Str(const byte *src, byte *dest, int nSrcLen) {

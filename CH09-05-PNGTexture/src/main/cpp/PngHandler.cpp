@@ -4,6 +4,7 @@
 #include <malloc.h>
 
 #include <utils/GLUtils.h>
+#include <androidnative/NativeMain.h>
 
 #include "utils.h"
 #include "PngHandler.h"

@@ -18,6 +18,17 @@
 #include <EGL/egl.h>
 #include <GLES3/gl3.h>
 
+#include <android/log.h>
+#include <string.h>
+
+#ifndef LOG_TAG
+#define LOG_TAG "NativeMain"
+#endif
+
+#define ALOGI(...) ((void)__android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__))
+#define ALOGD(...) ((void)__android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__))
+#define ALOGE(...) ((void)__android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__))
+
 /**
  * Same as Media Player
  */
@@ -75,6 +86,15 @@ struct Engine {
     EGLContext context;
     int32_t width;
     int32_t height;
+
+    float downx;
+    float downy;
+
+    float px;
+    float py;
+
+    float upx;
+    float upy;
 
     int isAlive;
     Play_State playState;
