@@ -1,6 +1,12 @@
 #undef  LOG_TAG
 #define LOG_TAG "TextureWrap"
 
+#define ATRACE_TAG ATRACE_TAG_GRAPHICS
+
+#include <unistd.h>
+
+#include <android/trace.h>
+
 #include <androidnative/NativeMain.h>
 #include <androidnative/ShaderLoader.h>
 
@@ -11,6 +17,7 @@
 #include "utils.h"
 
 typedef struct {
+    bool inited;
     // Handle to a program object
     GLuint programObject;
 
@@ -30,8 +37,154 @@ typedef struct {
 
     gl_texture_t *texture;
 
+    long frame;
+
 } UserData;
 
+char *readShaderSrcFile(const char *shaderFile, AAssetManager *pAssetManager) {
+    ATrace_beginSection("xm-gfx:ReadShaderSrcFile");
+    AAsset *pAsset = NULL;
+    char *pBuffer = NULL;
+    off_t size = -1;
+    int numByte = -1;
+
+    if (NULL == pAssetManager) {
+        MyLOGD("pAssetManager is null!");
+        return NULL;
+    }
+    pAsset = AAssetManager_open(pAssetManager, shaderFile, AASSET_MODE_UNKNOWN);
+    //LOGI("after AAssetManager_open");
+
+    size = AAsset_getLength(pAsset);
+    MyLOGD("after AAssetManager_open");
+    pBuffer = (char *) malloc(size + 1);
+    pBuffer[size] = '\0';
+
+    numByte = AAsset_read(pAsset, pBuffer, size);
+    MyLOGD("%s : [%s]", shaderFile, pBuffer);
+    AAsset_close(pAsset);
+
+    ATrace_endSection();
+
+    return pBuffer;
+}
+
+
+GLuint LoadShader(GLenum type, const char *shaderSrc) {
+    ATrace_beginSection("xm-gfx:LoadShader");
+    GLuint shader;
+    GLint compiled;
+
+    // Create the shader object
+    shader = glCreateShader(type);
+
+    if (shader == 0) {
+        ATrace_endSection();
+        return 0;
+    }
+
+    // Load the shader source
+    glShaderSource(shader, 1, &shaderSrc, NULL);
+
+    // Compile the shader
+    glCompileShader(shader);
+
+    // Check the compile status
+    glGetShaderiv(shader, GL_COMPILE_STATUS, &compiled);
+
+    if (!compiled) {
+        GLint infoLen = 0;
+
+        glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &infoLen);
+
+        if (infoLen > 1) {
+            char *infoLog = (char *) malloc(sizeof(char) * infoLen);
+
+            glGetShaderInfoLog(shader, infoLen, NULL, infoLog);
+            MyLOGE("Error compiling shader:[%s]", infoLog);
+
+            free(infoLog);
+        }
+
+        glDeleteShader(shader);
+        ATrace_endSection();
+        return 0;
+    }
+    ATrace_endSection();
+
+    return shader;
+}
+
+GLuint loadProgram(const char *vertShaderSrc, const char *fragShaderSrc) {
+    GLuint vertexShader;
+    GLuint fragmentShader;
+    GLuint programObject;
+    GLint linked;
+
+    ATrace_beginSection("xm-gfx:LoadProgram");
+
+    // Load the vertex/fragment shaders
+    vertexShader = LoadShader(GL_VERTEX_SHADER, vertShaderSrc);
+
+    if (vertexShader == 0) {
+        ATrace_endSection();
+        return 0;
+    }
+
+    fragmentShader = LoadShader(GL_FRAGMENT_SHADER, fragShaderSrc);
+
+    if (fragmentShader == 0) {
+        glDeleteShader(vertexShader);
+        ATrace_endSection();
+        return 0;
+    }
+
+    // Create the program object
+    programObject = glCreateProgram();
+
+    if (programObject == 0) {
+        ATrace_endSection();
+        return 0;
+    }
+
+    glAttachShader(programObject, vertexShader);
+    glAttachShader(programObject, fragmentShader);
+
+    // Link the program
+    ATrace_beginSection("xm-gfx:glLinkProgram");
+    glLinkProgram(programObject);
+    ATrace_endSection();
+
+    // Check the link status
+    glGetProgramiv(programObject, GL_LINK_STATUS, &linked);
+
+    if (!linked) {
+        GLint infoLen = 0;
+
+        glGetProgramiv(programObject, GL_INFO_LOG_LENGTH, &infoLen);
+
+        if (infoLen > 1) {
+            char *infoLog = (char *) malloc(sizeof(char) * infoLen);
+
+            glGetProgramInfoLog(programObject, infoLen, NULL, infoLog);
+            MyLOGE("Error linking program:\n%s\n", infoLog);
+
+            free(infoLog);
+        }
+
+        glDeleteProgram(programObject);
+        ATrace_endSection();
+        return 0;
+    }
+
+    // Free up no longer needed shader resources
+    glDeleteShader(vertexShader);
+    glDeleteShader(fragmentShader);
+
+    ATrace_endSection();
+
+    return programObject;
+}
 
 ///
 // Create a mipmapped 2D texture image
@@ -66,6 +219,13 @@ GLuint CreateTexture2D(UserData *userData, AAssetManager* assetManager, char *fi
 //
 int Init(Engine *esContext) {
     UserData *userData = (UserData *) esContext->userData;
+    if (userData->inited) {
+        return 0;
+    }
+
+    MyLOGE("xm-gfx:Init......................................................\n");
+
+    ATrace_beginSection("xm-gfx:Init");
 
     char *vShaderSource = readShaderSrcFile("shaders/vertex.vert", esContext->assetManager);
     char *fShaderSource = readShaderSrcFile("shaders/fragment.frag", esContext->assetManager);
@@ -93,6 +253,11 @@ int Init(Engine *esContext) {
     userData->textureId = CreateTexture2D(userData, esContext->assetManager, fileName);
 
     glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+
+    userData->inited = true;
+    userData->frame = 0;
+
+    ATrace_endSection();
     return GL_TRUE;
 }
 
@@ -101,6 +266,12 @@ int Init(Engine *esContext) {
 //
 void Draw(Engine *esContext) {
     UserData *userData = (UserData *) esContext->userData;
+    if (!userData->inited) {
+        Init(esContext);
+    }
+    userData->frame++;
+    ATrace_setCounter("xm-gfx:FrameNumber", userData->frame);
+    ATrace_beginSection("xm-gfx:Draw");
     GLfloat vVertices[] = {-0.3f, 0.3f, 0.0f, 1.0f,   // Position 0
                            -1.0f, -1.0f,              // TexCoord 0
                            -0.3f, -0.3f, 0.0f, 1.0f,  // Position 1
@@ -167,6 +338,8 @@ void Draw(Engine *esContext) {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
     glUniform1f(userData->offsetLoc, 0.75f);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
+
+    ATrace_endSection();
 }
 
 ///
@@ -174,7 +347,9 @@ void Draw(Engine *esContext) {
 //
 void ShutDown(Engine *esContext) {
     UserData *userData = (UserData *) esContext->userData;
-
+    if (!userData->inited) {
+        return;
+    }
     free(userData->texture->pixels);
     free(userData->texture);
 
@@ -187,11 +362,10 @@ void ShutDown(Engine *esContext) {
 
 int appMain(Engine *esContext) {
     esContext->userData = malloc(sizeof(UserData));
+    UserData *userData = (UserData *) esContext->userData;
+    userData->inited = false;
 
-    if (!Init(esContext)) {
-        return GL_FALSE;
-    }
-
+    registerInitFunc(esContext, Init);
     registerDrawFunc(esContext, Draw);
     registerShutdownFunc(esContext, ShutDown);
 

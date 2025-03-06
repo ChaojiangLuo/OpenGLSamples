@@ -2,6 +2,7 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.DEBUG_PROVIDER" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".StartingActivity">
+        <activity android:name=".StartingActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +23,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="android.app.NativeActivity">
+        <activity android:name="android.app.NativeActivity"
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="opengles_simples" />

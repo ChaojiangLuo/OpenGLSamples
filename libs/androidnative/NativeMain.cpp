@@ -5,6 +5,10 @@
 #undef  LOG_TAG
 #define LOG_TAG "OpenGL2Basic"
 
+#define ATRACE_TAG ATRACE_TAG_GRAPHICS
+
+#include <android/trace.h>
+
 #include <utils/EGLUtils.h>
 #include <utils/GLUtils.h>
 #include <androidnative/MyLog.h>
@@ -182,6 +186,7 @@ static void termDisplay(struct Engine *engine) {
  * Process the next input event.
  */
 static int32_t engine_handle_input(struct android_app *app, AInputEvent *event) {
+    //ATrace_beginSection("xm-gfx:engine_handle_input");
     struct Engine *engine = (struct Engine *) app->userData;
     if (AInputEvent_getType(event) == AINPUT_EVENT_TYPE_MOTION) {
         MyLOGD("engine_handle_input-%d-AINPUT_EVENT_TYPE_MOTION", AINPUT_EVENT_TYPE_MOTION);
@@ -206,7 +211,7 @@ static int32_t engine_handle_input(struct android_app *app, AInputEvent *event) 
                 engine->py = AMotionEvent_getY(event, 0);
                 break;
         }
-
+        //ATrace_endSection();
         return 1;
     } else if (AInputEvent_getType(event) == AINPUT_EVENT_TYPE_KEY) {
         MyLOGD("engine_handle_input-%d-AINPUT_EVENT_TYPE_KEY", AINPUT_EVENT_TYPE_KEY);
@@ -217,6 +222,7 @@ static int32_t engine_handle_input(struct android_app *app, AInputEvent *event) 
                 break;
         }
     }
+    //ATrace_endSection();
     MyLOGD("engine_handle_input-%d", AInputEvent_getType(event));
     return 0;
 }
@@ -493,6 +499,10 @@ void android_main(struct android_app *app) {
            frameInfo.totalTime, frameInfo.frameCount, frameInfo.frameCount / frameInfo.totalTime);
 
     MyLOGD("android_main end");
+}
+
+void registerInitFunc(Engine *engine, int (*initFunc )(Engine *)) {
+    engine->initFunc = initFunc;
 }
 
 void registerDrawFunc(Engine *engine, void (*drawFunc )(Engine *)) {

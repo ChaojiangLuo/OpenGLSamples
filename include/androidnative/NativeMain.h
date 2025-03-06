@@ -106,6 +106,8 @@ struct Engine {
     AAssetManager* assetManager;
 
     /// Callbacks
+    int (*initFunc )(Engine *);
+
     void (*drawFunc )(Engine *);
 
     void (*shutdownFunc )(Engine *);
@@ -116,6 +118,8 @@ struct Engine {
 };
 
 extern int appMain(struct Engine *engine);
+
+void registerInitFunc(Engine *engine, int (*initFunc )(Engine *));
 
 void registerShutdownFunc(Engine *engine, void (*shutdownFunc )(Engine *));
 

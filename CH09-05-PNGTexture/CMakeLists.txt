@@ -30,6 +30,11 @@ add_definitions(-DPNG_STATIC=ON)
 add_definitions(-DPNG_SHARED=OFF)
 add_definitions(-DPNG_TESTS=OFF)
 
+# 为 C 语言添加 -g 选项
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
+
+set(CMAKE_BUILD_TYPE Debug CACHE STRING "Choose the type of build." FORCE)
+
 set(PNG_STATIC ON)
 set(PNG_SHARED OFF)
 set(PNG_TESTS OFF)
@@ -41,7 +46,7 @@ get_filename_component(GLMINC_PREFIX
 add_subdirectory(${CMAKE_SOURCE_DIR}/png/libpng ${CMAKE_BINARY_DIR}/png)
 
 # 5.build opengles_simples
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11  -Werror -D VK_USE_PLATFORM_ANDROID_KHR")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -Werror -D VK_USE_PLATFORM_ANDROID_KHR")
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -u ANativeActivity_onCreate")
 
 add_library( opengles_simples
