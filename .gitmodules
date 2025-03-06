@@ -1,0 +1,6 @@
+[submodule "CH09-05-PNGTexture/png/libpng"]
+	path = CH09-05-PNGTexture/png/libpng
+	url = git@github.com:pnggroup/libpng.git
+[submodule "CH09-05-PNGTexture/zlib/zlib"]
+	path = CH09-05-PNGTexture/zlib/zlib
+	url = git@github.com:madler/zlib.git

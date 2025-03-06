@@ -28,7 +28,7 @@ public class StartingActivity extends Activity {
 
     private void startNativeActivity() {
         Intent intent = new Intent();
-        intent.setAction("android.intent.action.MAIN_NATIVE");
+        intent.setAction("android.intent.action.MAIN_NATIVE").setClassName(/* TODO: provide the application ID. For example: */ getPackageName(), "android.app.NativeActivity");
         startActivity(intent);
     }
 

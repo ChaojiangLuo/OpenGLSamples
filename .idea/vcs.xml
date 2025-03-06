@@ -2,7 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/CH09-05-PNGTexture/png/libpng" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/CH09-05-PNGTexture/png/libpng-v1.6.47" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/CH09-05-PNGTexture/zlib/zlib-v1.3.1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/CH09-05-PNGTexture/zlib/zlib" vcs="Git" />
   </component>
 </project>

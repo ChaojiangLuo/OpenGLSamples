@@ -20,10 +20,10 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/../libs/glesutils ${CMAKE_BINARY_DIR}/glesu
 
 # 3.build zlib
 get_filename_component(GLMINC_PREFIX
-        "${CMAKE_SOURCE_DIR}/zlib/zlib-v1.3.1"
+        "${CMAKE_SOURCE_DIR}/zlib/zlib"
         ABSOLUTE)
 
-add_subdirectory(${CMAKE_SOURCE_DIR}/zlib/zlib-v1.3.1 ${CMAKE_BINARY_DIR}/zlib)
+add_subdirectory(${CMAKE_SOURCE_DIR}/zlib/zlib ${CMAKE_BINARY_DIR}/zlib)
 
 # 4.build libpng
 add_definitions(-DPNG_STATIC=ON)
@@ -35,10 +35,10 @@ set(PNG_SHARED OFF)
 set(PNG_TESTS OFF)
 
 get_filename_component(GLMINC_PREFIX
-        "${CMAKE_SOURCE_DIR}/png/libpng-v1.6.47"
+        "${CMAKE_SOURCE_DIR}/png/libpng"
         ABSOLUTE)
 
-add_subdirectory(${CMAKE_SOURCE_DIR}/png/libpng-v1.6.47 ${CMAKE_BINARY_DIR}/png)
+add_subdirectory(${CMAKE_SOURCE_DIR}/png/libpng ${CMAKE_BINARY_DIR}/png)
 
 # 5.build opengles_simples
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11  -Werror -D VK_USE_PLATFORM_ANDROID_KHR")
@@ -55,8 +55,8 @@ add_library( opengles_simples
 target_include_directories( opengles_simples PRIVATE
         ${ANDROID_NDK}/sources/android/native_app_glue
         ${CMAKE_SOURCE_DIR}/../include
-        ${CMAKE_SOURCE_DIR}/zlib/zlib-v1.3.1
-        ${CMAKE_SOURCE_DIR}/png/libpng-v1.6.47
+        ${CMAKE_SOURCE_DIR}/zlib/zlib
+        ${CMAKE_SOURCE_DIR}/png/libpng
         )
 # 7.link static libs
 target_link_libraries( opengles_simples
