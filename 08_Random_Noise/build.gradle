@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion '30.0.0 rc2'
 
     defaultConfig {
         applicationId "com.lcj.opengl.random_noise"
@@ -25,6 +24,7 @@ android {
             path file('CMakeLists.txt')
         }
     }
+    namespace 'com.lcj.opengl.random_noise'
 
 }
 

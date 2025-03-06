@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
 
 
     defaultConfig {
@@ -26,6 +25,7 @@ android {
             path file('CMakeLists.txt')
         }
     }
+    namespace 'com.lcj.opengles.pngtexture'
 }
 
 dependencies {

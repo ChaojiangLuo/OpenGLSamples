@@ -23,7 +23,7 @@ android {
             path 'CMakeLists.txt'
         }
     }
-    buildToolsVersion '28.0.3'
+    namespace 'com.luocj.opengl.angeles'
 }
 
 dependencies {

@@ -36,11 +36,11 @@ typedef struct {
 ///
 // Create a mipmapped 2D texture image
 //
-GLuint CreateTexture2D(UserData *userData, char *fileName) {
+GLuint CreateTexture2D(UserData *userData, AAssetManager* assetManager, char *fileName) {
     // Texture object handle
     GLuint textureId;
 
-    userData->texture = readPngFile(fileName);
+    userData->texture = readPngFileFromAssets(assetManager, fileName);
 
     // Generate a texture object
     glGenTextures(1, &textureId);
@@ -87,10 +87,10 @@ int Init(Engine *esContext) {
                                                        "texelHeightOffset");
 
     char fileName[512] = {0};
-    sprintf(fileName, "/sdcard/png/%s", "png_4_2_32bit.png");
+    sprintf(fileName, "png/%s", "nezha2.png");
 
     // Load the texture
-    userData->textureId = CreateTexture2D(userData, fileName);
+    userData->textureId = CreateTexture2D(userData, esContext->assetManager, fileName);
 
     glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
     return GL_TRUE;

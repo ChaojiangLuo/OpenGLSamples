@@ -18,6 +18,8 @@ struct gl_texture_t {
 
 gl_texture_t *readPngFile(char *name);
 
+gl_texture_t *readPngFileFromAssets(AAssetManager *pAssetManager, char *name);
+
 void GetPNGtextureInfo(int color_type, gl_texture_t *texinfo);
 
 void writePngFile(char *fileName, png_byte *src, int width, int height, int format);
